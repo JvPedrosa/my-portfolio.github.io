@@ -52,10 +52,11 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm João Victor.</span> I'm a{" "}
-        <span className="font-bold">front-end developer.</span> I enjoy building{" "}
-        <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
+        <span>
+          Olá, sou <b>João Victor</b> um jovem Desenvolvedor Web Front-End, com
+          experiência em criação de sites e webapps utilizando{" "}
+          <i>React, JavaScript, TypeScript, HTML, CSS...</i>
+        </span>
       </motion.h1>
 
       <motion.div
