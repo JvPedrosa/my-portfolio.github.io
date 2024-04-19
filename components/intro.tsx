@@ -55,7 +55,7 @@ export default function Intro() {
         <span>
           Olá, sou <b>João Victor</b> um jovem Desenvolvedor Web Front-End, com
           experiência em criação de sites e webapps utilizando{" "}
-          <i>React, JavaScript, TypeScript, HTML, CSS...</i>
+          <i>React, TypeScript, JavaScript e Next.js</i>
         </span>
       </motion.h1>
 
@@ -71,7 +71,7 @@ export default function Intro() {
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
         >
-          Contact me here{" "}
+          Fale comigo{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
@@ -80,7 +80,7 @@ export default function Intro() {
           href="/CV.pdf"
           download
         >
-          Download CV{" "}
+          Baixe meu CV{" "}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
 
