@@ -20,7 +20,7 @@ export const links = [
     hash: "#projects",
   },
   {
-    name: "Habilidades",
+    name: "Conhecimentos",
     hash: "#skills",
   },
   {
@@ -65,21 +65,21 @@ export const projectsData = [
     title: "CorpComment",
     description:
       "Trabalhei como desenvolvedor full-stack neste projeto de startup por 2 anos. Usuários podem dar feedback público para empresas.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+    tags: ["React", "Next.js"],
     imageUrl: corpcommentImg,
   },
   {
     title: "rmtDev",
     description:
       "Plataforma de empregos para desenvolvedores remotos. Fui o desenvolvedor front-end. Possui recursos como filtragem, ordenação e paginação.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+    tags: ["React", "TypeScript", "Next.js", "Redux"],
     imageUrl: rmtdevImg,
   },
   {
     title: "Word Analytics",
     description:
       "Um aplicativo web público para análises rápidas de texto. Mostra a contagem de palavras, contagem de caracteres e limites de postagens em mídias sociais.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    tags: ["React", "Next.js"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;
@@ -93,6 +93,6 @@ export const skillsData = [
   "Next.js",
   "Node.js",
   "Git",
-  "Tailwind",
   "Redux",
+  "Styled Components",
 ] as const;
