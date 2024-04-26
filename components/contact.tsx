@@ -6,10 +6,22 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contato");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    const { error } = await sendEmail(formData);
+    if (error) {
+      toast.error("Falha ao enviar e-mail: " + error);
+    } else {
+      toast.success("E-mail enviado com sucesso!");
+    }
+  };
 
   return (
     <motion.section
@@ -29,6 +41,7 @@ export default function Contact() {
         once: true,
       }}
     >
+      <Toaster position="bottom-center" reverseOrder={false} />
       <SectionHeading>Contato</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
@@ -42,16 +55,7 @@ export default function Contact() {
 
       <form
         className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          const { error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Email sent successfully!");
-        }}
+        onSubmit={handleSubmit}
       >
         <input
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
