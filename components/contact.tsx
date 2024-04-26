@@ -29,7 +29,7 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Entre em Contato</SectionHeading>
+      <SectionHeading>Contato</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Entre em contato comigo através do formulário abaixo
@@ -43,7 +43,7 @@ export default function Contact() {
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+          const { error } = await sendEmail(formData);
 
           if (error) {
             toast.error(error);

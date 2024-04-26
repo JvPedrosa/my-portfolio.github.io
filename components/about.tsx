@@ -19,24 +19,21 @@ export default function About() {
     >
       <SectionHeading>Sobre mim </SectionHeading>
       <p className="mb-3">
-        Formado em Ciência da Computação, estudei na Universidade Federal da
-        Paraíba (UFPB), um curso que é mais voltado ao backend, mas curiosamente
-        gostei do <span className="font-medium">desenvolvimento frontend</span>.{" "}
-        <span className="italic">Minha parte favorita da programação</span> é o
-        aspecto de resolver problemas. Eu amo a sensação de finalmente encontrar
-        uma solução para um problema. Minhas principais tecnologias são{" "}
-        <span className="font-medium">
-          React, TypeScript, JavaScript e Node.js
-        </span>
-        . Também estou familiarizado com Next.js. Estou sempre buscando aprender
-        novas tecnologias. Atualmente, estou procurando uma{" "}
+        Me formei em Ciência da Computação, na Universidade Federal da Paraíba
+        (UFPB). Minha parte favorita da programação é o aspecto de resolver
+        problemas. Eu amo a sensação de finalmente encontrar uma solução para um
+        problema. Minhas principais tecnologias são{" "}
+        <span className="font-medium">React, TypeScript e JavaScript</span>.
+        Também estou familiarizado com Next.js. Estou sempre buscando aprender
+        novas tecnologias. E atualmente, estou procurando uma{" "}
         <span className="font-medium">oportunidade </span> como desenvolvedor de
         software.
       </p>
 
       <p>
-        <span className="italic">Quando não estou programando</span>, gosto de
-        me exercitar, sou um ex-atleta profissional de natação. Também gosto de
+        Quando não estou programando, gosto de me exercitar, sou um ex-atleta
+        profissional de natação, que se transformou no meu hobbie hoje, faço
+        parte da Federação de Esportes Aquáticos da Paraíba. Também gosto de
         assistir filmes, comer uma boa comida e claro,{" "}
         <span className="font-medium">aprender coisas novas</span>. Atualmente,
         estou abrindo meus horizontes e estudando um pouco de{" "}
