@@ -11,7 +11,7 @@ export default function Experience() {
 
   return (
     <motion.section
-      className="mb-28 w-[48rem] text-center leading-8 sm:mb-40 scroll-mt-28"
+      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -27,19 +27,17 @@ export default function Experience() {
             className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow"
           >
             <div className="flex items-center space-x-3">
-              <div className="icon p-3" style={{ fontSize: "36px" }}>
+              <div className="icon p-3" style={{ fontSize: "2rem" }}>
                 {experience.icon}
               </div>
               <div className="info flex-grow">
                 <h3 className="text-xl font-semibold">{experience.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {experience.company} ({experience.location})
-                </p>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-600 text-sm dark:text-gray-300">
+                  {experience.company} ({experience.location}) -{" "}
                   {experience.period} ({experience.duration})
                 </p>
 
-                <p className="mt-2 mx-12 text-sm text-gray-600 dark:text-gray-300">
+                <p className="mt-2 mx-2 text-sm text-gray-600 dark:text-gray-300">
                   {experience.description}
                 </p>
                 <div className="flex-grow flex flex-wrap justify-center mt-2 gap-2">

@@ -1,5 +1,15 @@
 import React from "react";
-import { FaLaptopCode, FaUserGraduate } from "react-icons/fa";
+import { FaLaptopCode, FaUserGraduate, FaNodeJs } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiReact,
+  SiJavascript,
+  SiRedux,
+  SiCss3,
+  SiGit,
+  SiHtml5,
+  SiNextdotjs,
+} from "react-icons/si";
 
 export const links = [
   {
@@ -32,7 +42,7 @@ export const experiencesData = [
   {
     title: "Desenvolvedor Front-End",
     company: "Control It",
-    period: "Ago 2023 - Abr 2024",
+    period: "Ago 2023 até Abr 2024",
     duration: "9 meses",
     location: "Remoto",
     skills: ["React.js", "TypeScript", "CSS", "Styled Components", "Git"],
@@ -43,7 +53,7 @@ export const experiencesData = [
   {
     title: "Desenvolvedor Front-End",
     company: "Lieno Tecnologia",
-    period: "Mai 2022 - Mar 2023",
+    period: "Mai 2022 até Mar 2023",
     duration: "11 meses",
     location: "Híbrido, João Pessoa",
     skills: ["React.js", "Redux.js", "Visual Basic.NET", "CSS", "Git"],
@@ -54,7 +64,7 @@ export const experiencesData = [
   {
     title: "Estágio em Front-End",
     company: "Lieno Tecnologia",
-    period: "Nov 2021 - Abr 2022",
+    period: "Nov 2021 até Abr 2022",
     duration: "6 meses",
     location: "João Pessoa",
     skills: ["React.js", "Redux.js", "CSS", "Git"],
@@ -65,7 +75,7 @@ export const experiencesData = [
   {
     title: "Estágio em Front-End",
     company: "UFPB",
-    period: "Jul 2021 - Nov 2021",
+    period: "Jul 2021 até Nov 2021",
     duration: "5 meses",
     location: "Remoto",
     skills: ["HTML", "JavaScript", "CSS", "WordPress", "Git"],
@@ -76,7 +86,7 @@ export const experiencesData = [
   {
     title: "Voluntário em Projeto de Extensão",
     company: "UFPB",
-    period: "Abr 2020 - Dez 2020",
+    period: "Abr 2020 até Dez 2020",
     duration: "9 meses",
     location: "Híbrido, João Pessoa",
     skills: ["Edição de Vídeos"],
@@ -111,14 +121,40 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "TypeScript",
-  "React",
-  "JavaScript",
-  "Redux",
-  "CSS",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Styled Components",
-  "HTML",
+  {
+    skill: "TypeScript",
+    icon: React.createElement(SiTypescript),
+  },
+  {
+    skill: "JavaScript",
+    icon: React.createElement(SiJavascript),
+  },
+  {
+    skill: "React",
+    icon: React.createElement(SiReact),
+  },
+  {
+    skill: "Redux",
+    icon: React.createElement(SiRedux),
+  },
+  {
+    skill: "Next.js",
+    icon: React.createElement(SiNextdotjs),
+  },
+  {
+    skill: "Node.js",
+    icon: React.createElement(FaNodeJs),
+  },
+  {
+    skill: "Git",
+    icon: React.createElement(SiGit),
+  },
+  {
+    skill: "HTML",
+    icon: React.createElement(SiHtml5),
+  },
+  {
+    skill: "CSS",
+    icon: React.createElement(SiCss3),
+  },
 ] as const;
