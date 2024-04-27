@@ -32,9 +32,8 @@ export default function About() {
 
       <p>
         Quando não estou programando, gosto de me exercitar, sou um ex-atleta
-        profissional de natação, que se transformou no meu hobbie hoje, faço
-        parte da Federação de Esportes Aquáticos da Paraíba. Também gosto de
-        assistir filmes, comer uma boa comida e claro,{" "}
+        profissional de natação, que se transformou no meu hobbie hoje. Também
+        gosto de assistir filmes, comer uma boa comida e claro,{" "}
         <span className="font-medium">aprender coisas novas</span>. Atualmente,
         estou abrindo meus horizontes e estudando um pouco de{" "}
         <span className="font-medium">GoLang</span>.
