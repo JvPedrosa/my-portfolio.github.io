@@ -19,15 +19,17 @@ export default function About() {
     >
       <SectionHeading>Sobre mim </SectionHeading>
       <p className="mb-3">
-        Me formei em Ciência da Computação, na Universidade Federal da Paraíba
-        (UFPB). Minha parte favorita da programação é o aspecto de resolver
-        problemas. Eu amo a sensação de finalmente encontrar uma solução para um
-        problema. Minhas principais tecnologias são{" "}
-        <span className="font-medium">React, TypeScript e JavaScript</span>.
-        Também estou familiarizado com Next.js. Estou sempre buscando aprender
-        novas tecnologias. E atualmente, estou procurando uma{" "}
-        <span className="font-medium">oportunidade </span> como desenvolvedor de
-        software.
+        Estudante de Ciência da Computação pela Universidade Federal da Paraíba
+        (UFPB) e apaixonado pela arte de resolver problemas através da
+        programação. Minha motivação surge ao enfrentar desafios e encontrar
+        soluções eficazes. Tenho experiência com tecnologias como{" "}
+        <span className="font-medium">React, TypeScript e JavaScript</span>, e
+        também estou familiarizado com{" "}
+        <span className="font-medium">Next.js.</span>
+        Estou sempre em busca de aprimorar minhas habilidades e aprender novas
+        tecnologias. Atualmente, estou explorando oportunidades como
+        desenvolvedor de software, onde posso contribuir com minha paixão por
+        criar soluções inovadoras.
       </p>
 
       <p>
