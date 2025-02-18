@@ -24,3 +24,28 @@ export const getErrorMessage = (error: unknown): string => {
 
   return message;
 };
+
+export const calculateDuration = (start: string): string => {
+  const startDate = new Date(start);
+  const currentDate = new Date();
+  const diffTime = currentDate.getTime() - startDate.getTime();
+  const diffMonths = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30.44));
+  const years = Math.floor(diffMonths / 12);
+  const months = diffMonths % 12;
+
+  let result = [];
+  if (years > 0) {
+    result.push(`${years} ano${years > 1 ? "s" : ""}`);
+  }
+  if (months > 0) {
+    if (months === 1) {
+      result.push(`${months} mês`);
+    } else {
+      result.push(`${months} meses`);
+    }
+  }
+  if (years === 0 && months === 0) {
+    result.push("menos de um mês");
+  }
+  return result.join(" e ");
+};

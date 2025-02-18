@@ -10,6 +10,7 @@ import {
   SiHtml5,
   SiNextdotjs,
 } from "react-icons/si";
+import { calculateDuration } from "./utils";
 
 export const links = [
   {
@@ -39,6 +40,17 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
+  {
+    title: "Desenvolvedor I",
+    company: "Zoox Smart Data",
+    period: "Jul 2024 até o momento",
+    duration: calculateDuration("Jul 1 2024"),
+    location: "Remoto",
+    skills: ["Vue.js", "Vuex", "JavaScript", "HTML", "CSS", "Git"],
+    description:
+      "Desenvolvimento de aplicações web utilizando Vue.js e Vuex, focando na criação de interfaces de usuário eficientes e responsivas.",
+    icon: React.createElement(FaLaptopCode),
+  },
   {
     title: "Desenvolvedor Front-End",
     company: "Control It",
