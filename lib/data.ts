@@ -1,5 +1,10 @@
 import React from "react";
-import { FaLaptopCode, FaUserGraduate, FaNodeJs } from "react-icons/fa";
+import {
+  FaLaptopCode,
+  FaUserGraduate,
+  FaNodeJs,
+  FaVuejs,
+} from "react-icons/fa";
 import {
   SiTypescript,
   SiReact,
@@ -9,8 +14,10 @@ import {
   SiGit,
   SiHtml5,
   SiNextdotjs,
+  SiVuetify,
 } from "react-icons/si";
 import { calculateDuration } from "./utils";
+import { IoLogoVue } from "react-icons/io5";
 
 export const links = [
   {
@@ -41,14 +48,14 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Desenvolvedor I",
+    title: "Desenvolvedor Front-End I",
     company: "Zoox Smart Data",
     period: "Jul 2024 até o momento",
     duration: calculateDuration("Jul 1 2024"),
     location: "Remoto",
-    skills: ["Vue.js", "Vuex", "JavaScript", "HTML", "CSS", "Git"],
+    skills: ["Vue.js", "Vuex", "Vuetify", "JavaScript", "CSS", "Git"],
     description:
-      "Desenvolvimento de aplicações web utilizando Vue.js e Vuex, focando na criação de interfaces de usuário eficientes e responsivas.",
+      "Desenvolvimento de aplicações web utilizando Vue.js e Vuex, focando na criação de interfaces de usuário.",
     icon: React.createElement(FaLaptopCode),
   },
   {
@@ -133,6 +140,18 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
+  {
+    skill: "Vue.js",
+    icon: React.createElement(IoLogoVue),
+  },
+  {
+    skill: "Vuex",
+    icon: React.createElement(FaVuejs),
+  },
+  {
+    skill: "Vuetify",
+    icon: React.createElement(SiVuetify),
+  },
   {
     skill: "TypeScript",
     icon: React.createElement(SiTypescript),
