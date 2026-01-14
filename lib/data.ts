@@ -28,10 +28,10 @@ export const links = [
     name: "Sobre",
     hash: "#about",
   },
-  // {
-  //   name: "Projetos",
-  //   hash: "#projects",
-  // },
+  {
+    name: "Projetos",
+    hash: "#projects",
+  },
   {
     name: "Conhecimentos",
     hash: "#skills",
@@ -116,27 +116,22 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
-  // {
-  //   title: "CorpComment",
-  //   description:
-  //     "Trabalhei como desenvolvedor full-stack neste projeto de startup por 2 anos. Usuários podem dar feedback público para empresas.",
-  //   tags: ["React", "Next.js"],
-  //   imageUrl: corpcommentImg,
-  // },
-  // {
-  //   title: "rmtDev",
-  //   description:
-  //     "Plataforma de empregos para desenvolvedores remotos. Fui o desenvolvedor front-end. Possui recursos como filtragem, ordenação e paginação.",
-  //   tags: ["React", "TypeScript", "Next.js", "Redux"],
-  //   imageUrl: rmtdevImg,
-  // },
-  // {
-  //   title: "Word Analytics",
-  //   description:
-  //     "Um aplicativo web público para análises rápidas de texto. Mostra a contagem de palavras, contagem de caracteres e limites de postagens em mídias sociais.",
-  //   tags: ["React", "Next.js"],
-  //   imageUrl: wordanalyticsImg,
-  // },
+  {
+    title: "Poker Simulator",
+    description:
+      "Simulador interativo de Texas Hold'em com mesa visual para 4 jogadores, sistema completo de apostas, avaliação automática de mãos e IA para adversários. Inclui todas as fases do jogo e animações.",
+    tags: ["Nuxt.js", "Vue.js", "TypeScript", "Vite"],
+    githubUrl: "https://github.com/JvPedrosa/poker-simulator",
+    demoUrl: "https://poker-simulator-green.vercel.app/",
+  },
+  {
+    title: "Meu Portfólio",
+    description:
+      "Portfólio pessoal desenvolvido com Next.js 14, TypeScript e Tailwind CSS. Apresenta minhas experiências, habilidades e projetos de forma moderna e responsiva.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+    githubUrl: "https://github.com/JvPedrosa/my-portfolio.github.io",
+    demoUrl: "https://my-portfolio-liart-one-93.vercel.app",
+  },
 ] as const;
 
 export const skillsData = [
