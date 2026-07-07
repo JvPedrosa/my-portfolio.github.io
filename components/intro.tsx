@@ -8,6 +8,7 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
+import profileImg from "@/public/profile.jpeg";
 export default function Intro() {
   const { ref } = useSectionInView("Início");
   return (
@@ -27,10 +28,11 @@ export default function Intro() {
             }}
           >
             <Image
-              src={require("../public/profile.jpeg")}
+              src={profileImg}
               alt="João Victor profile picture"
-              width="192"
-              height="192"
+              width={192}
+              height={192}
+              priority
               className="h-48 w-48 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>

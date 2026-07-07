@@ -28,10 +28,17 @@ export const getErrorMessage = (error: unknown): string => {
 export const calculateDuration = (start: string): string => {
   const startDate = new Date(start);
   const currentDate = new Date();
-  const diffTime = Math.abs(currentDate.getTime() - startDate.getTime());
-  const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30));
-  const years = Math.floor(diffMonths / 12);
-  const months = diffMonths % 12;
+
+  let totalMonths =
+    (currentDate.getFullYear() - startDate.getFullYear()) * 12 +
+    (currentDate.getMonth() - startDate.getMonth());
+  if (currentDate.getDate() < startDate.getDate()) {
+    totalMonths -= 1;
+  }
+  totalMonths = Math.max(totalMonths, 0);
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
 
   let result = [];
   if (years > 0) {

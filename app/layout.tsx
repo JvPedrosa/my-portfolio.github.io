@@ -9,7 +9,18 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "João Victor | Portfolio",
-  description: "João Victor is a front-end developer.",
+  description: "João Victor é um desenvolvedor front-end.",
+  openGraph: {
+    title: "João Victor | Portfolio",
+    description: "João Victor é um desenvolvedor front-end.",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "João Victor | Portfolio",
+    description: "João Victor é um desenvolvedor front-end.",
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="pt-BR" className="!scroll-smooth">
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
