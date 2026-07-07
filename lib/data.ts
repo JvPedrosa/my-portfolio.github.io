@@ -117,6 +117,14 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "Finance Tracker",
+    description:
+      "Dashboard de controle financeiro pessoal com autenticação, CRUD de transações e gráfico de despesas por categoria. Backend com Postgres e Row Level Security via Supabase.",
+    tags: ["Nuxt.js", "Vue.js", "Vuetify", "Supabase", "TypeScript"],
+    githubUrl: "https://github.com/JvPedrosa/finance-tracker",
+    demoUrl: "https://finance-tracker-chi-flax-70.vercel.app",
+  },
+  {
     title: "Poker Simulator",
     description:
       "Simulador interativo de Texas Hold'em com mesa visual para 4 jogadores, sistema completo de apostas, avaliação automática de mãos e IA para adversários. Inclui todas as fases do jogo e animações.",
