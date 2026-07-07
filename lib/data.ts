@@ -15,6 +15,8 @@ import {
   SiHtml5,
   SiNextdotjs,
   SiVuetify,
+  SiPostgresql,
+  SiMongodb,
 } from "react-icons/si";
 import { calculateDuration } from "./utils";
 import { IoLogoVue } from "react-icons/io5";
@@ -48,14 +50,25 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Desenvolvedor Front-End I",
+    title: "Desenvolvedor Full-Stack",
     company: "Zoox Smart Data",
     period: "Jul 2024 até o momento",
     duration: calculateDuration("Jul 1 2024"),
     location: "Remoto",
-    skills: ["Vue.js", "Vuex", "Vuetify", "JavaScript", "CSS", "Git"],
+    skills: [
+      "Vue.js",
+      "Vuex",
+      "Vuetify",
+      "Node.js",
+      "APIs REST",
+      "PostgreSQL",
+      "MongoDB",
+      "JavaScript",
+      "CSS",
+      "Git",
+    ],
     description:
-      "Desenvolvimento de aplicações web utilizando Vue.js e Vuex, focando na criação de interfaces de usuário.",
+      "Desenvolvimento de aplicações web com Vue.js e Vuex no front-end, além de construção e integração de APIs em Node.js e modelagem de dados com PostgreSQL e MongoDB no back-end.",
     icon: React.createElement(FaLaptopCode),
   },
   {
@@ -178,6 +191,14 @@ export const skillsData = [
   {
     skill: "Node.js",
     icon: React.createElement(FaNodeJs),
+  },
+  {
+    skill: "PostgreSQL",
+    icon: React.createElement(SiPostgresql),
+  },
+  {
+    skill: "MongoDB",
+    icon: React.createElement(SiMongodb),
   },
   {
     skill: "Git",

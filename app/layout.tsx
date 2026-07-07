@@ -9,17 +9,17 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "João Victor | Portfolio",
-  description: "João Victor é um desenvolvedor front-end.",
+  description: "João Victor é um desenvolvedor full-stack com foco em front-end.",
   openGraph: {
     title: "João Victor | Portfolio",
-    description: "João Victor é um desenvolvedor front-end.",
+    description: "João Victor é um desenvolvedor full-stack com foco em front-end.",
     locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: "João Victor | Portfolio",
-    description: "João Victor é um desenvolvedor front-end.",
+    description: "João Victor é um desenvolvedor full-stack com foco em front-end.",
   },
 };
 

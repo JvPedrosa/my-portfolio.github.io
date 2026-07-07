@@ -45,9 +45,9 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span>
-          Olá, sou <b>João Victor</b> um jovem Desenvolvedor Web Front-End, com
-          experiência em criação de sites e webapps utilizando{" "}
-          <i>React, TypeScript, JavaScript e Next.js</i>
+          Olá, sou <b>João Victor</b>, Desenvolvedor Full-Stack com foco em
+          Front-End, com experiência em criação de sites e webapps utilizando{" "}
+          <i>React, Vue.js, TypeScript e Next.js</i>
         </span>
       </motion.h1>
 
