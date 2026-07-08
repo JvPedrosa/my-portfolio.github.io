@@ -26,6 +26,7 @@ export type SectionId =
   | "projects"
   | "skills"
   | "experience"
+  | "education"
   | "contact";
 
 export const links: { id: SectionId; hash: string }[] = [
@@ -34,6 +35,7 @@ export const links: { id: SectionId; hash: string }[] = [
   { id: "projects", hash: "#projects" },
   { id: "skills", hash: "#skills" },
   { id: "experience", hash: "#experience" },
+  { id: "education", hash: "#education" },
   { id: "contact", hash: "#contact" },
 ];
 

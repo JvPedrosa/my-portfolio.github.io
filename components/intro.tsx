@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -13,6 +13,27 @@ import profileImg from "@/public/profile.jpeg";
 export default function Intro() {
   const { ref } = useSectionInView("home");
   const { language, t } = useLanguage();
+  const [isDownloadingCv, setIsDownloadingCv] = useState(false);
+
+  async function handleDownloadCv() {
+    if (isDownloadingCv) return;
+    setIsDownloadingCv(true);
+    try {
+      const response = await fetch(`/cv.pdf?lang=${language}`);
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "CV-Joao-Victor-Pedrosa.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } finally {
+      setIsDownloadingCv(false);
+    }
+  }
+
   return (
     <section
       id="home"
@@ -68,14 +89,24 @@ export default function Intro() {
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
-        <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href={`/cv.pdf?lang=${language}`}
-          download
+        <button
+          type="button"
+          onClick={handleDownloadCv}
+          disabled={isDownloadingCv}
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 disabled:cursor-wait disabled:hover:scale-100"
         >
-          {t.intro.downloadCv}
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </a>
+          {isDownloadingCv ? (
+            <>
+              {t.intro.generatingCv}
+              <span className="h-4 w-4 animate-spin rounded-full border-b-2 border-current" />
+            </>
+          ) : (
+            <>
+              {t.intro.downloadCv}
+              <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+            </>
+          )}
+        </button>
 
         <a
           className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"

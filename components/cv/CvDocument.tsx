@@ -167,12 +167,12 @@ export function CvDocument({ language }: { language: Language }) {
           );
         })}
 
-        <Text style={styles.sectionHeading}>{t.cv.educationHeading}</Text>
+        <Text style={styles.sectionHeading}>{t.sectionHeadings.education}</Text>
         <View style={styles.educationRow}>
           <Text>
-            {t.cv.education.degree} - {t.cv.education.institution}
+            {t.education.degree} - {t.education.institution}
           </Text>
-          <Text style={styles.experiencePeriod}>{t.cv.education.period}</Text>
+          <Text style={styles.experiencePeriod}>{t.education.period}</Text>
         </View>
 
         <Text style={styles.sectionHeading}>{t.cv.languagesHeading}</Text>

@@ -4,6 +4,7 @@ const en: Dictionary = {
   nav: {
     home: "Home",
     about: "About",
+    education: "Education",
     projects: "Projects",
     skills: "Skills",
     experience: "Experience",
@@ -11,6 +12,7 @@ const en: Dictionary = {
   },
   sectionHeadings: {
     about: "About me",
+    education: "Education",
     projects: "My projects",
     skills: "Skills",
     experience: "My Experience",
@@ -19,18 +21,19 @@ const en: Dictionary = {
   intro: {
     greeting: "Hi, I'm",
     role: "a Full-Stack Developer focused on Front-End, with experience building websites and web apps using",
-    stack: "React, Vue.js, TypeScript and Next.js",
+    stack: "Vue.js, React, Node.js and TypeScript",
     contactBtn: "Contact",
     downloadCv: "Download my CV",
+    generatingCv: "Generating...",
   },
   about: {
     paragraph1Start:
-      "Computer Science graduate from Universidade Federal da Paraíba (UFPB) and passionate about the art of solving problems through code. My motivation comes from tackling challenges and finding effective solutions. I have experience with technologies like",
-    paragraph1Bold1: "React, TypeScript, and JavaScript",
-    paragraph1Mid: ", and I'm also familiar with",
-    paragraph1Bold2: "Next.js.",
+      "Computer Science student at Universidade Federal da Paraíba (UFPB) and passionate about the art of solving problems through code. My motivation comes from tackling challenges and finding effective solutions. I have experience with technologies like",
+    paragraph1Bold1: "React, Vue.js, and TypeScript",
+    paragraph1Mid: ", and I also work with",
+    paragraph1Bold2: "Node.js and Next.js.",
     paragraph1End:
-      "I'm always looking to sharpen my skills and learn new technologies. I'm currently exploring opportunities as a software developer, where I can put my passion for building innovative solutions to work.",
+      "I currently work as a Full-Stack Developer at Zoox Smart Data, where I put my passion for building innovative solutions to work, always looking to sharpen my skills and learn new technologies.",
     paragraph2Start:
       "When I'm not coding, I like to work out — I'm a former competitive swimmer, and it's become my hobby today. I also enjoy watching movies, good food, and of course,",
     paragraph2Bold1: "learning new things",
@@ -47,6 +50,11 @@ const en: Dictionary = {
   },
   submitBtn: "Send",
   footer: "© Built by João Victor Pedrosa 2024. All rights reserved.",
+  education: {
+    degree: "Computer Science Student",
+    institution: "Universidade Federal da Paraíba (UFPB)",
+    period: "2019 - 2024",
+  },
   cv: {
     jobTitle: "Full-Stack Developer",
     location: "João Pessoa, PB, Brazil",
@@ -55,12 +63,6 @@ const en: Dictionary = {
     hardSkillsHeading: "Hard skills",
     softSkillsHeading: "Soft skills",
     softSkills: ["Fast learner", "Teamwork", "Emotional intelligence"],
-    educationHeading: "Education",
-    education: {
-      degree: "Bachelor's in Computer Science",
-      institution: "Universidade Federal da Paraíba (UFPB)",
-      period: "2019 - 2024",
-    },
     experienceHeading: "Work Experience",
     languagesHeading: "Languages",
     languages: [

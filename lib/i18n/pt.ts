@@ -2,6 +2,7 @@ const pt = {
   nav: {
     home: "Início",
     about: "Sobre",
+    education: "Formação",
     projects: "Projetos",
     skills: "Conhecimentos",
     experience: "Experiência",
@@ -9,6 +10,7 @@ const pt = {
   },
   sectionHeadings: {
     about: "Sobre mim",
+    education: "Formação",
     projects: "Meus projetos",
     skills: "Conhecimentos",
     experience: "Minhas Experiências",
@@ -17,18 +19,19 @@ const pt = {
   intro: {
     greeting: "Olá, sou",
     role: "Desenvolvedor Full-Stack com foco em Front-End, com experiência em criação de sites e webapps utilizando",
-    stack: "React, Vue.js, TypeScript e Next.js",
+    stack: "Vue.js, React, Node.js e TypeScript",
     contactBtn: "Contato",
     downloadCv: "Baixe meu CV",
+    generatingCv: "Gerando...",
   },
   about: {
     paragraph1Start:
-      "Bacharel em Ciência da Computação pela Universidade Federal da Paraíba (UFPB) e apaixonado pela arte de resolver problemas através da programação. Minha motivação surge ao enfrentar desafios e encontrar soluções eficazes. Tenho experiência com tecnologias como",
-    paragraph1Bold1: "React, TypeScript e JavaScript",
-    paragraph1Mid: ", e também estou familiarizado com",
-    paragraph1Bold2: "Next.js.",
+      "Estudante de Ciência da Computação pela Universidade Federal da Paraíba (UFPB) e apaixonado pela arte de resolver problemas através da programação. Minha motivação surge ao enfrentar desafios e encontrar soluções eficazes. Tenho experiência com tecnologias como",
+    paragraph1Bold1: "React, Vue.js e TypeScript",
+    paragraph1Mid: ", e também atuo com",
+    paragraph1Bold2: "Node.js e Next.js.",
     paragraph1End:
-      "Estou sempre em busca de aprimorar minhas habilidades e aprender novas tecnologias. Atualmente, estou explorando oportunidades como desenvolvedor de software, onde posso contribuir com minha paixão por criar soluções inovadoras.",
+      "Atualmente, atuo como Desenvolvedor Full-Stack na Zoox Smart Data, onde coloco em prática minha paixão por criar soluções inovadoras, sempre em busca de aprimorar minhas habilidades e aprender novas tecnologias.",
     paragraph2Start:
       "Quando não estou programando, gosto de me exercitar, sou um ex-atleta profissional de natação, que se transformou no meu hobbie hoje. Também gosto de assistir filmes, comer uma boa comida e claro,",
     paragraph2Bold1: "aprender coisas novas",
@@ -46,6 +49,11 @@ const pt = {
   submitBtn: "Enviar",
   footer:
     "© Desenvolvido por João Victor Pedrosa 2024. Todos os direitos reservados.",
+  education: {
+    degree: "Estudante de Ciência da Computação",
+    institution: "Universidade Federal da Paraíba (UFPB)",
+    period: "2019 - 2024",
+  },
   cv: {
     jobTitle: "Desenvolvedor Full-Stack",
     location: "João Pessoa, PB, Brasil",
@@ -54,12 +62,6 @@ const pt = {
     hardSkillsHeading: "Hard-skills",
     softSkillsHeading: "Soft-skills",
     softSkills: ["Aprendizagem rápida", "Trabalho em equipe", "Inteligência emocional"],
-    educationHeading: "Formação",
-    education: {
-      degree: "Bacharelado em Ciência da Computação",
-      institution: "Universidade Federal da Paraíba (UFPB)",
-      period: "2019 - 2024",
-    },
     experienceHeading: "Experiência Profissional",
     languagesHeading: "Idiomas",
     languages: [
