@@ -103,11 +103,24 @@ export const experiencesData: {
 ];
 
 export const projectsData: {
-  id: "financeTracker" | "pokerSimulator" | "portfolio";
+  id: "realEstate" | "financeTracker" | "pokerSimulator" | "portfolio";
   tags: string[];
   githubUrl: string;
   demoUrl: string;
 }[] = [
+  {
+    id: "realEstate",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+    ],
+    githubUrl: "https://github.com/JvPedrosa/realestate-launch-platform",
+    demoUrl: "https://realestate-launch-platform.vercel.app",
+  },
   {
     id: "financeTracker",
     tags: ["Nuxt.js", "Vue.js", "Vuetify", "Supabase", "TypeScript"],

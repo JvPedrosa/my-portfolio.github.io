@@ -127,6 +127,11 @@ const en: Dictionary = {
     },
   },
   projects: {
+    realEstate: {
+      title: "Real Estate Launch Platform",
+      description:
+        "Full-featured platform for real estate launches with a live sales availability board, secure online reservations, role-based access, proposals, payments, and management reports.",
+    },
     financeTracker: {
       title: "Finance Tracker",
       description:

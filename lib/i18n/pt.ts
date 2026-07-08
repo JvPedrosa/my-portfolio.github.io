@@ -126,6 +126,11 @@ const pt = {
     },
   },
   projects: {
+    realEstate: {
+      title: "Plataforma de Lançamentos Imobiliários",
+      description:
+        "Plataforma completa para lançamentos imobiliários, com espelho de vendas em tempo real, reservas online seguras, diferentes perfis de acesso, propostas, pagamentos e relatórios gerenciais.",
+    },
     financeTracker: {
       title: "Finance Tracker",
       description:
