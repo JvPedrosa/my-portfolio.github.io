@@ -23,7 +23,7 @@ const pt = {
   },
   about: {
     paragraph1Start:
-      "Estudante de Ciência da Computação pela Universidade Federal da Paraíba (UFPB) e apaixonado pela arte de resolver problemas através da programação. Minha motivação surge ao enfrentar desafios e encontrar soluções eficazes. Tenho experiência com tecnologias como",
+      "Bacharel em Ciência da Computação pela Universidade Federal da Paraíba (UFPB) e apaixonado pela arte de resolver problemas através da programação. Minha motivação surge ao enfrentar desafios e encontrar soluções eficazes. Tenho experiência com tecnologias como",
     paragraph1Bold1: "React, TypeScript e JavaScript",
     paragraph1Mid: ", e também estou familiarizado com",
     paragraph1Bold2: "Next.js.",
@@ -46,6 +46,27 @@ const pt = {
   submitBtn: "Enviar",
   footer:
     "© Desenvolvido por João Victor Pedrosa 2024. Todos os direitos reservados.",
+  cv: {
+    jobTitle: "Desenvolvedor Full-Stack",
+    location: "João Pessoa, PB, Brasil",
+    profileSummary:
+      "Desenvolvedor Full-Stack apaixonado por tecnologia e resolução de problemas através da programação. Tenho experiência no desenvolvimento de aplicações web completas, do front-end ao back-end, com foco em performance, acessibilidade e boas práticas. Atuo com Vue.js, React, Node.js e bancos de dados como PostgreSQL e MongoDB, buscando constantemente aprimorar minhas habilidades e me adaptar às novas tendências do mercado.",
+    hardSkillsHeading: "Hard-skills",
+    softSkillsHeading: "Soft-skills",
+    softSkills: ["Aprendizagem rápida", "Trabalho em equipe", "Inteligência emocional"],
+    educationHeading: "Formação",
+    education: {
+      degree: "Bacharelado em Ciência da Computação",
+      institution: "Universidade Federal da Paraíba (UFPB)",
+      period: "2019 - 2024",
+    },
+    experienceHeading: "Experiência Profissional",
+    languagesHeading: "Idiomas",
+    languages: [
+      { name: "Português", level: "Nativo" },
+      { name: "Inglês", level: "Avançado" },
+    ],
+  },
   experiences: {
     zoox: {
       title: "Desenvolvedor Full-Stack",

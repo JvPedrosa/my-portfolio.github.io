@@ -25,7 +25,7 @@ const en: Dictionary = {
   },
   about: {
     paragraph1Start:
-      "Computer Science student at Universidade Federal da Paraíba (UFPB) and passionate about the art of solving problems through code. My motivation comes from tackling challenges and finding effective solutions. I have experience with technologies like",
+      "Computer Science graduate from Universidade Federal da Paraíba (UFPB) and passionate about the art of solving problems through code. My motivation comes from tackling challenges and finding effective solutions. I have experience with technologies like",
     paragraph1Bold1: "React, TypeScript, and JavaScript",
     paragraph1Mid: ", and I'm also familiar with",
     paragraph1Bold2: "Next.js.",
@@ -47,6 +47,27 @@ const en: Dictionary = {
   },
   submitBtn: "Send",
   footer: "© Built by João Victor Pedrosa 2024. All rights reserved.",
+  cv: {
+    jobTitle: "Full-Stack Developer",
+    location: "João Pessoa, PB, Brazil",
+    profileSummary:
+      "Full-Stack Developer passionate about technology and solving problems through code. I have experience building complete web applications, from front-end to back-end, with a focus on performance, accessibility, and best practices. I work with Vue.js, React, Node.js, and databases like PostgreSQL and MongoDB, always looking to sharpen my skills and adapt to new market trends.",
+    hardSkillsHeading: "Hard skills",
+    softSkillsHeading: "Soft skills",
+    softSkills: ["Fast learner", "Teamwork", "Emotional intelligence"],
+    educationHeading: "Education",
+    education: {
+      degree: "Bachelor's in Computer Science",
+      institution: "Universidade Federal da Paraíba (UFPB)",
+      period: "2019 - 2024",
+    },
+    experienceHeading: "Work Experience",
+    languagesHeading: "Languages",
+    languages: [
+      { name: "Portuguese", level: "Native" },
+      { name: "English", level: "Advanced" },
+    ],
+  },
   experiences: {
     zoox: {
       title: "Full-Stack Developer",
