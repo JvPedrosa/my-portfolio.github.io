@@ -18,142 +18,113 @@ import {
   SiPostgresql,
   SiMongodb,
 } from "react-icons/si";
-import { calculateDuration } from "./utils";
 import { IoLogoVue } from "react-icons/io5";
 
-export const links = [
-  {
-    name: "Início",
-    hash: "#home",
-  },
-  {
-    name: "Sobre",
-    hash: "#about",
-  },
-  {
-    name: "Projetos",
-    hash: "#projects",
-  },
-  {
-    name: "Conhecimentos",
-    hash: "#skills",
-  },
-  {
-    name: "Experiência",
-    hash: "#experience",
-  },
-  {
-    name: "Contato",
-    hash: "#contact",
-  },
-] as const;
+export type SectionId =
+  | "home"
+  | "about"
+  | "projects"
+  | "skills"
+  | "experience"
+  | "contact";
 
-export const experiencesData = [
+export const links: { id: SectionId; hash: string }[] = [
+  { id: "home", hash: "#home" },
+  { id: "about", hash: "#about" },
+  { id: "projects", hash: "#projects" },
+  { id: "skills", hash: "#skills" },
+  { id: "experience", hash: "#experience" },
+  { id: "contact", hash: "#contact" },
+];
+
+export const experiencesData: {
+  id:
+    | "zoox"
+    | "controlIt"
+    | "lienoFulltime"
+    | "lienoIntern"
+    | "ufpbIntern"
+    | "ufpbVolunteer";
+  company: string;
+  startDate?: string;
+  skills: string[];
+  icon: React.ReactNode;
+}[] = [
   {
-    title: "Desenvolvedor Full-Stack",
+    id: "zoox",
     company: "Zoox Smart Data",
-    period: "Jul 2024 até o momento",
-    duration: calculateDuration("Jul 1 2024"),
-    location: "Remoto",
+    startDate: "Jul 1 2024",
     skills: [
       "Vue.js",
       "Vuex",
       "Vuetify",
       "Node.js",
-      "APIs REST",
+      "REST APIs",
       "PostgreSQL",
       "MongoDB",
       "JavaScript",
       "CSS",
       "Git",
     ],
-    description:
-      "Desenvolvimento de aplicações web com Vue.js e Vuex no front-end, além de construção e integração de APIs em Node.js e modelagem de dados com PostgreSQL e MongoDB no back-end.",
     icon: React.createElement(FaLaptopCode),
   },
   {
-    title: "Desenvolvedor Front-End",
+    id: "controlIt",
     company: "Control It",
-    period: "Ago 2023 até Abr 2024",
-    duration: "9 meses",
-    location: "Remoto",
     skills: ["React.js", "TypeScript", "CSS", "Styled Components", "Git"],
-    description:
-      "Desenvolvimento de interfaces dinâmicas e responsivas com foco na integração de dispositivos IoT sem fios para gerenciar ambientes, máquinas, equipamentos e pessoas de forma remota.",
     icon: React.createElement(FaLaptopCode),
   },
   {
-    title: "Desenvolvedor Front-End",
+    id: "lienoFulltime",
     company: "Lieno Tecnologia",
-    period: "Mai 2022 até Mar 2023",
-    duration: "11 meses",
-    location: "Híbrido, João Pessoa",
     skills: ["React.js", "Redux.js", "Visual Basic.NET", "CSS", "Git"],
-    description:
-      "Atuei na refatoração e otimização de aplicações utilizando React.js e Redux.js, melhorando a eficiência e a responsividade dos sistemas. Em outro projeto, modernizei códigos utilizando Visual Basic.NET para aprimorar sistemas legados, aumentando a facilidade de manutenção e a satisfação do usuário.",
     icon: React.createElement(FaLaptopCode),
   },
   {
-    title: "Estágio em Front-End",
+    id: "lienoIntern",
     company: "Lieno Tecnologia",
-    period: "Nov 2021 até Abr 2022",
-    duration: "6 meses",
-    location: "João Pessoa",
     skills: ["React.js", "Redux.js", "CSS", "Git"],
-    description:
-      "Na minha primeira experiência no mercado privado, me dediquei ao desenvolvimento de funcionalidades utilizando principalmente React.js e Redux.js. O foco dos meus esforços estava em aprimorar a experiência do usuário, tornando as interfaces mais interativas e acessíveis.",
     icon: React.createElement(FaUserGraduate),
   },
   {
-    title: "Estágio em Front-End",
+    id: "ufpbIntern",
     company: "UFPB",
-    period: "Jul 2021 até Nov 2021",
-    duration: "5 meses",
-    location: "Remoto",
     skills: ["HTML", "JavaScript", "CSS", "WordPress", "Git"],
-    description:
-      "Criação de um site para a divulgação e interação dos alunos com os Projetos de Extensão da universidade utilizando WordPress, além de desenvolvimento customizado com HTML, JavaScript e CSS.",
     icon: React.createElement(FaUserGraduate),
   },
   {
-    title: "Voluntário em Projeto de Extensão",
+    id: "ufpbVolunteer",
     company: "UFPB",
-    period: "Abr 2020 até Dez 2020",
-    duration: "9 meses",
-    location: "Híbrido, João Pessoa",
     skills: ["Edição de Vídeos"],
-    description:
-      "Edição de vídeos educativos para cursos online, contribuindo para projetos de extensão universitária.",
     icon: React.createElement(FaUserGraduate),
   },
-] as const;
+];
 
-export const projectsData = [
+export const projectsData: {
+  id: "financeTracker" | "pokerSimulator" | "portfolio";
+  tags: string[];
+  githubUrl: string;
+  demoUrl: string;
+}[] = [
   {
-    title: "Finance Tracker",
-    description:
-      "Dashboard de controle financeiro pessoal com autenticação, CRUD de transações e gráfico de despesas por categoria. Backend com Postgres e Row Level Security via Supabase.",
+    id: "financeTracker",
     tags: ["Nuxt.js", "Vue.js", "Vuetify", "Supabase", "TypeScript"],
     githubUrl: "https://github.com/JvPedrosa/finance-tracker",
     demoUrl: "https://finance-tracker-chi-flax-70.vercel.app",
   },
   {
-    title: "Poker Simulator",
-    description:
-      "Simulador interativo de Texas Hold'em com mesa visual para 4 jogadores, sistema completo de apostas, avaliação automática de mãos e IA para adversários. Inclui todas as fases do jogo e animações.",
+    id: "pokerSimulator",
     tags: ["Nuxt.js", "Vue.js", "TypeScript", "Vite"],
     githubUrl: "https://github.com/JvPedrosa/poker-simulator",
     demoUrl: "https://poker-simulator-green.vercel.app/",
   },
   {
-    title: "Meu Portfólio",
-    description:
-      "Portfólio pessoal desenvolvido com Next.js 14, TypeScript e Tailwind CSS. Apresenta minhas experiências, habilidades e projetos de forma moderna e responsiva.",
+    id: "portfolio",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
     githubUrl: "https://github.com/JvPedrosa/my-portfolio.github.io",
     demoUrl: "https://my-portfolio-liart-one-93.vercel.app",
   },
-] as const;
+];
 
 export const skillsData = [
   {

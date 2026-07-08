@@ -8,9 +8,11 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
+import { useLanguage } from "@/context/language-context";
 import profileImg from "@/public/profile.jpeg";
 export default function Intro() {
-  const { ref } = useSectionInView("Início");
+  const { ref } = useSectionInView("home");
+  const { t } = useLanguage();
   return (
     <section
       id="home"
@@ -45,9 +47,8 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span>
-          Olá, sou <b>João Victor</b>, Desenvolvedor Full-Stack com foco em
-          Front-End, com experiência em criação de sites e webapps utilizando{" "}
-          <i>React, Vue.js, TypeScript e Next.js</i>
+          {t.intro.greeting} <b>João Victor</b>, {t.intro.role}{" "}
+          <i>{t.intro.stack}</i>
         </span>
       </motion.h1>
 
@@ -63,7 +64,7 @@ export default function Intro() {
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
         >
-          Contato{" "}
+          {t.intro.contactBtn}{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
@@ -72,7 +73,7 @@ export default function Intro() {
           href="/CV.pdf"
           download
         >
-          Baixe meu CV
+          {t.intro.downloadCv}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
 

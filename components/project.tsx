@@ -4,16 +4,18 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useLanguage } from "@/context/language-context";
 
 type ProjectProps = (typeof projectsData)[number];
 
 export default function Project({
-  title,
-  description,
+  id,
   tags,
   githubUrl,
   demoUrl,
 }: ProjectProps) {
+  const { t } = useLanguage();
+  const { title, description } = t.projects[id];
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -37,7 +39,7 @@ export default function Project({
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
             {description}
           </p>
-          
+
           <div className="flex gap-3 mt-4">
             {githubUrl && (
               <a

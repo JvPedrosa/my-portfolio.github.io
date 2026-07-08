@@ -4,9 +4,11 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { useLanguage } from "@/context/language-context";
 
 export default function About() {
-  const { ref } = useSectionInView("Sobre");
+  const { ref } = useSectionInView("about");
+  const { t } = useLanguage();
 
   return (
     <motion.section
@@ -17,28 +19,20 @@ export default function About() {
       id="about"
       ref={ref}
     >
-      <SectionHeading>Sobre mim </SectionHeading>
+      <SectionHeading>{t.sectionHeadings.about}</SectionHeading>
       <p className="mb-3">
-        Estudante de Ciência da Computação pela Universidade Federal da Paraíba
-        (UFPB) e apaixonado pela arte de resolver problemas através da
-        programação. Minha motivação surge ao enfrentar desafios e encontrar
-        soluções eficazes. Tenho experiência com tecnologias como{" "}
-        <span className="font-medium">React, TypeScript e JavaScript</span>, e
-        também estou familiarizado com{" "}
-        <span className="font-medium">Next.js.</span>
-        Estou sempre em busca de aprimorar minhas habilidades e aprender novas
-        tecnologias. Atualmente, estou explorando oportunidades como
-        desenvolvedor de software, onde posso contribuir com minha paixão por
-        criar soluções inovadoras.
+        {t.about.paragraph1Start}{" "}
+        <span className="font-medium">{t.about.paragraph1Bold1}</span>
+        {t.about.paragraph1Mid}{" "}
+        <span className="font-medium">{t.about.paragraph1Bold2}</span>{" "}
+        {t.about.paragraph1End}
       </p>
 
       <p>
-        Quando não estou programando, gosto de me exercitar, sou um ex-atleta
-        profissional de natação, que se transformou no meu hobbie hoje. Também
-        gosto de assistir filmes, comer uma boa comida e claro,{" "}
-        <span className="font-medium">aprender coisas novas</span>. Atualmente,
-        estou abrindo meus horizontes e estudando um pouco de{" "}
-        <span className="font-medium">GoLang</span>.
+        {t.about.paragraph2Start}{" "}
+        <span className="font-medium">{t.about.paragraph2Bold1}</span>
+        {t.about.paragraph2Mid}{" "}
+        <span className="font-medium">{t.about.paragraph2Bold2}</span>.
       </p>
     </motion.section>
   );

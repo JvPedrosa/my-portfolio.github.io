@@ -25,7 +25,29 @@ export const getErrorMessage = (error: unknown): string => {
   return message;
 };
 
-export const calculateDuration = (start: string): string => {
+const durationWords = {
+  pt: {
+    year: "ano",
+    years: "anos",
+    month: "mês",
+    months: "meses",
+    and: "e",
+    lessThanMonth: "menos de um mês",
+  },
+  en: {
+    year: "year",
+    years: "years",
+    month: "month",
+    months: "months",
+    and: "and",
+    lessThanMonth: "less than a month",
+  },
+};
+
+export const calculateDuration = (
+  start: string,
+  language: "pt" | "en" = "pt"
+): string => {
   const startDate = new Date(start);
   const currentDate = new Date();
 
@@ -39,20 +61,17 @@ export const calculateDuration = (start: string): string => {
 
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
+  const words = durationWords[language];
 
-  let result = [];
+  const result: string[] = [];
   if (years > 0) {
-    result.push(`${years} ano${years > 1 ? "s" : ""}`);
+    result.push(`${years} ${years > 1 ? words.years : words.year}`);
   }
   if (months > 0) {
-    if (months === 1) {
-      result.push(`${months} mês`);
-    } else {
-      result.push(`${months} meses`);
-    }
+    result.push(`${months} ${months > 1 ? words.months : words.month}`);
   }
   if (years === 0 && months === 0) {
-    result.push("menos de um mês");
+    result.push(words.lessThanMonth);
   }
-  return result.join(" e ");
+  return result.join(` ${words.and} `);
 };

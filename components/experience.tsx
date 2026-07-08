@@ -4,10 +4,13 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
+import { useLanguage } from "@/context/language-context";
+import { calculateDuration } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 export default function Experience() {
-  const { ref } = useSectionInView("Experiência");
+  const { ref } = useSectionInView("experience");
+  const { language, t } = useLanguage();
 
   return (
     <motion.section
@@ -18,42 +21,49 @@ export default function Experience() {
       id="experience"
       ref={ref}
     >
-      <SectionHeading>Minhas Experiências</SectionHeading>
+      <SectionHeading>{t.sectionHeadings.experience}</SectionHeading>
 
       <ul className="space-y-4">
-        {experiencesData.map((experience: any, index: number) => (
-          <li
-            key={index}
-            className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow"
-          >
-            <div className="flex items-center space-x-3">
-              <div className="icon p-3" style={{ fontSize: "2rem" }}>
-                {experience.icon}
-              </div>
-              <div className="info flex-grow">
-                <h3 className="text-xl font-semibold">{experience.title}</h3>
-                <p className="text-gray-600 text-sm dark:text-gray-300">
-                  {experience.company} ({experience.location}) -{" "}
-                  {experience.period} ({experience.duration})
-                </p>
+        {experiencesData.map((experience, index) => {
+          const text = t.experiences[experience.id];
+          const duration = experience.startDate
+            ? calculateDuration(experience.startDate, language)
+            : text.duration;
 
-                <p className="mt-2 mx-2 text-sm text-gray-600 dark:text-gray-300">
-                  {experience.description}
-                </p>
-                <div className="flex-grow flex flex-wrap justify-center mt-2 gap-2">
-                  {experience.skills.map((skill: string, index: number) => (
-                    <span
-                      key={index}
-                      className="text-xs bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-300 px-2 py-1 rounded-full"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+          return (
+            <li
+              key={index}
+              className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow"
+            >
+              <div className="flex items-center space-x-3">
+                <div className="icon p-3" style={{ fontSize: "2rem" }}>
+                  {experience.icon}
+                </div>
+                <div className="info flex-grow">
+                  <h3 className="text-xl font-semibold">{text.title}</h3>
+                  <p className="text-gray-600 text-sm dark:text-gray-300">
+                    {experience.company} ({text.location}) - {text.period} (
+                    {duration})
+                  </p>
+
+                  <p className="mt-2 mx-2 text-sm text-gray-600 dark:text-gray-300">
+                    {text.description}
+                  </p>
+                  <div className="flex-grow flex flex-wrap justify-center mt-2 gap-2">
+                    {experience.skills.map((skill: string, index: number) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-300 px-2 py-1 rounded-full"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ul>
     </motion.section>
   );

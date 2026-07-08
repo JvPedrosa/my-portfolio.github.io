@@ -4,12 +4,14 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { useLanguage } from "@/context/language-context";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
-  const { ref } = useSectionInView("Contato");
+  const { ref } = useSectionInView("contact");
+  const { t } = useLanguage();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -17,9 +19,9 @@ export default function Contact() {
 
     const { error } = await sendEmail(formData);
     if (error) {
-      toast.error("Falha ao enviar e-mail: " + error);
+      toast.error(t.contact.errorPrefix + error);
     } else {
-      toast.success("E-mail enviado com sucesso!");
+      toast.success(t.contact.success);
     }
   };
 
@@ -42,12 +44,12 @@ export default function Contact() {
       }}
     >
       <Toaster position="bottom-center" reverseOrder={false} />
-      <SectionHeading>Contato</SectionHeading>
+      <SectionHeading>{t.sectionHeadings.contact}</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Entre em contato comigo através do formulário abaixo
+        {t.contact.intro}
         <br />
-        ou envie um e-mail para{" "}
+        {t.contact.introVia}{" "}
         <a className="underline" href="mailto:jotavpedrosa@gmail.com">
           jotavpedrosa@gmail.com
         </a>{" "}
@@ -63,12 +65,12 @@ export default function Contact() {
           type="email"
           required
           maxLength={500}
-          placeholder="Digite o seu e-mail"
+          placeholder={t.contact.emailPlaceholder}
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
-          placeholder="Digite a sua mensagem"
+          placeholder={t.contact.messagePlaceholder}
           required
           maxLength={5000}
         />
