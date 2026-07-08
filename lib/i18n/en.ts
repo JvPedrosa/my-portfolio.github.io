@@ -50,6 +50,12 @@ const en: Dictionary = {
   },
   submitBtn: "Send",
   footer: "© Built by João Victor Pedrosa 2024. All rights reserved.",
+  notFound: {
+    title: "Oops! This page ran away.",
+    subtitle:
+      "The page you're looking for doesn't exist or has moved. How about heading back to safety?",
+    backHome: "Back to home",
+  },
   education: {
     degree: "Computer Science Student",
     institution: "Universidade Federal da Paraíba (UFPB)",

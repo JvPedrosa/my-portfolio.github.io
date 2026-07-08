@@ -49,6 +49,12 @@ const pt = {
   submitBtn: "Enviar",
   footer:
     "© Desenvolvido por João Victor Pedrosa 2024. Todos os direitos reservados.",
+  notFound: {
+    title: "Ops! Essa página fugiu.",
+    subtitle:
+      "A página que você procura não existe ou foi movida. Que tal voltar para um lugar seguro?",
+    backHome: "Voltar para o início",
+  },
   education: {
     degree: "Estudante de Ciência da Computação",
     institution: "Universidade Federal da Paraíba (UFPB)",
