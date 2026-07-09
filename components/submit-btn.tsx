@@ -6,19 +6,15 @@ import { useLanguage } from "@/context/language-context";
 
 type SubmitBtnProps = {
   pending: boolean;
-  disabled?: boolean;
 };
 
-export default function SubmitBtn({
-  pending,
-  disabled = false,
-}: SubmitBtnProps) {
+export default function SubmitBtn({ pending }: SubmitBtnProps) {
   const { t } = useLanguage();
 
   return (
     <button
       type="submit"
-      disabled={disabled || pending}
+      disabled={pending}
       className="focus-ring inline-flex h-12 items-center justify-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-65 dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200"
     >
       {pending ? (

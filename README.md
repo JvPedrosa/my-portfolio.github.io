@@ -32,13 +32,19 @@ Abra `http://localhost:3000`.
 
 ## Variáveis de ambiente
 
-Crie um arquivo `.env.local` se quiser habilitar o formulário:
+Crie um arquivo `.env.local` para habilitar o formulário:
 
 ```bash
 RESEND_API_KEY=
+CONTACT_EMAIL_FROM=
+CONTACT_EMAIL_TO=
 ```
 
-Sem essa variável, o formulário permanece visível, mas bloqueado com mensagem explicando que a integração ainda precisa ser configurada.
+- `RESEND_API_KEY`: chave privada da conta no Resend.
+- `CONTACT_EMAIL_FROM`: remetente usado pelo Resend. Exemplo: `Portfolio Contact <seu-dominio@seudominio.com>`.
+- `CONTACT_EMAIL_TO`: destinatário que receberá as mensagens do formulário.
+
+Sem essas variáveis, o formulário continua visível, mas o envio falha com uma mensagem amigável para o visitante.
 
 ## Scripts
 

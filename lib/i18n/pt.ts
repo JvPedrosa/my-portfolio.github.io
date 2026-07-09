@@ -81,16 +81,20 @@ const pt = {
     githubLabel: "GitHub",
     formTitle: "Mensagem rápida",
     formDescription:
-      "Use o formulário se o serviço de envio estiver configurado. Caso contrário, meu e-mail continua como o canal principal.",
+      "Se preferir, envie uma mensagem por aqui. O contato direto por e-mail, LinkedIn e GitHub continua disponível ao lado.",
+    namePlaceholder: "Seu nome",
     emailPlaceholder: "seuemail@empresa.com",
     messagePlaceholder: "Conte um pouco sobre o projeto, vaga ou contexto do contato.",
+    nameInputLabel: "Seu nome",
     emailInputLabel: "Seu e-mail",
     messageInputLabel: "Sua mensagem",
-    errorPrefix: "Falha ao enviar a mensagem: ",
-    success: "Mensagem enviada com sucesso!",
-    unavailable:
-      "O formulário precisa de configuração do serviço de e-mail. Enquanto isso, use o contato direto acima.",
-    submit: "Enviar mensagem",
+    success: "Mensagem enviada com sucesso. Retornarei o contato em breve.",
+    sendError:
+      "Não foi possível enviar sua mensagem agora. Tente novamente ou utilize o contato direto.",
+    invalidName: "Informe seu nome para enviar a mensagem.",
+    invalidEmail: "Informe um e-mail válido para que eu possa responder.",
+    invalidMessage:
+      "Escreva uma mensagem um pouco mais detalhada antes de enviar.",
     availability: "Disponível para oportunidades e conversas profissionais.",
     cvLabel: "Baixar currículo",
   },

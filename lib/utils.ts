@@ -9,6 +9,15 @@ export const validateString = (
   return true;
 };
 
+export const sanitizeInput = (value: string) =>
+  value.replace(/[\r\n]+/g, " ").trim();
+
+export const validateEmail = (value: string) => {
+  const normalizedValue = sanitizeInput(value);
+
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedValue);
+};
+
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
 

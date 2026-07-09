@@ -9,7 +9,6 @@ import Skills from "@/components/skills";
 import { siteConfig } from "@/lib/data";
 
 export default function Home() {
-  const contactFormEnabled = Boolean(process.env.RESEND_API_KEY);
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -40,7 +39,7 @@ export default function Home() {
           <Skills />
           <Experience />
           <Education />
-          <Contact contactFormEnabled={contactFormEnabled} />
+          <Contact />
         </div>
         <Footer />
       </main>
