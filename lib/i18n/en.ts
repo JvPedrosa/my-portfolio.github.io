@@ -127,6 +127,9 @@ const en: Dictionary = {
     },
   },
   projects: {
+    github: "GitHub",
+    demo: "Demo",
+    privateRepository: "Private repository",
     realEstate: {
       title: "Real Estate Launch Platform",
       description:

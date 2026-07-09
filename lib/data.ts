@@ -107,6 +107,7 @@ export const projectsData: {
   tags: string[];
   githubUrl: string;
   demoUrl: string;
+  githubPrivate?: boolean;
 }[] = [
   {
     id: "realEstate",
@@ -120,6 +121,7 @@ export const projectsData: {
     ],
     githubUrl: "https://github.com/JvPedrosa/realestate-launch-platform",
     demoUrl: "https://realestate-launch-platform.vercel.app",
+    githubPrivate: true,
   },
   {
     id: "financeTracker",

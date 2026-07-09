@@ -126,6 +126,9 @@ const pt = {
     },
   },
   projects: {
+    github: "GitHub",
+    demo: "Demo",
+    privateRepository: "Repositório privado",
     realEstate: {
       title: "Plataforma de Lançamentos Imobiliários",
       description:

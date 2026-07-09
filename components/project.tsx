@@ -13,6 +13,7 @@ export default function Project({
   tags,
   githubUrl,
   demoUrl,
+  githubPrivate,
 }: ProjectProps) {
   const { t } = useLanguage();
   const { title, description } = t.projects[id];
@@ -42,15 +43,32 @@ export default function Project({
 
           <div className="flex gap-3 mt-4">
             {githubUrl && (
-              <a
-                href={githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition dark:bg-white/10 dark:hover:bg-white/20"
-              >
-                <FaGithub />
-                <span className="text-sm">GitHub</span>
-              </a>
+              githubPrivate ? (
+                <div className="relative group/private">
+                  <button
+                    type="button"
+                    disabled
+                    title={t.projects.privateRepository}
+                    className="flex items-center gap-2 bg-gray-900/60 text-white/70 px-4 py-2 rounded-full cursor-not-allowed transition dark:bg-white/10 dark:text-white/60"
+                  >
+                    <FaGithub />
+                    <span className="text-sm">{t.projects.github}</span>
+                  </button>
+                  <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-gray-950 px-3 py-1 text-xs text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover/private:opacity-100 group-focus-within/private:opacity-100 dark:bg-white dark:text-gray-900">
+                    {t.projects.privateRepository}
+                  </span>
+                </div>
+              ) : (
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition dark:bg-white/10 dark:hover:bg-white/20"
+                >
+                  <FaGithub />
+                  <span className="text-sm">{t.projects.github}</span>
+                </a>
+              )
             )}
             {demoUrl && (
               <a
@@ -60,7 +78,7 @@ export default function Project({
                 className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition"
               >
                 <FaExternalLinkAlt className="text-xs" />
-                <span className="text-sm">Demo</span>
+                <span className="text-sm">{t.projects.demo}</span>
               </a>
             )}
           </div>
