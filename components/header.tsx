@@ -9,7 +9,6 @@ import { links, siteConfig } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useLanguage } from "@/context/language-context";
 import LanguageSwitch from "./language-switch";
-import ThemeToggle from "./theme-toggle";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
@@ -58,7 +57,6 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <ThemeToggle />
           <LanguageSwitch />
         </div>
 
@@ -103,7 +101,6 @@ export default function Header() {
             </nav>
 
             <div className="mt-4 flex items-center gap-2">
-              <ThemeToggle className="flex-none" />
               <LanguageSwitch className="flex-1 justify-center" />
             </div>
           </motion.div>

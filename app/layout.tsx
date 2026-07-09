@@ -58,7 +58,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="pt-BR"
+      className="dark scroll-smooth"
+      suppressHydrationWarning
+    >
       <body className="bg-[var(--color-bg)] text-[var(--color-text)] antialiased">
         <div className="site-noise" aria-hidden="true" />
         <div className="site-orb site-orb-one" aria-hidden="true" />
