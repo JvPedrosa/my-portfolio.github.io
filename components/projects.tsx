@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { projectsData, projectCategories, type ProjectCategoryId } from "@/lib/data";
+import { FaCodeBranch } from "react-icons/fa";
+import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useLanguage } from "@/context/language-context";
 import SectionHeading from "./section-heading";
@@ -10,20 +11,23 @@ import Project from "./project";
 export default function Projects() {
   const { ref } = useSectionInView("projects");
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState<ProjectCategoryId>("all");
+  const [activeTechnology, setActiveTechnology] = useState("all");
+
+  const technologies = useMemo(
+    () =>
+      Array.from(new Set(projectsData.flatMap((project) => project.tags))).sort(
+        (firstTechnology, secondTechnology) =>
+          firstTechnology.localeCompare(secondTechnology)
+      ),
+    []
+  );
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === "all") return projectsData;
-    return projectsData.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
-
-  const labelMap: Record<ProjectCategoryId, string> = {
-    all: t.projects.filterAll,
-    frontend: t.projects.filterFrontend,
-    fullstack: t.projects.filterFullstack,
-    study: t.projects.filterStudy,
-    personal: t.projects.filterPersonal,
-  };
+    if (activeTechnology === "all") return projectsData;
+    return projectsData.filter((project) =>
+      project.tags.includes(activeTechnology)
+    );
+  }, [activeTechnology]);
 
   return (
     <section
@@ -41,19 +45,33 @@ export default function Projects() {
         </p>
 
         <div className="flex flex-wrap gap-2">
-          {projectCategories.map((category) => (
+          <button
+            type="button"
+            onClick={() => setActiveTechnology("all")}
+            className={`focus-ring inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+              activeTechnology === "all"
+                ? "border-cyan-300 bg-cyan-300 text-slate-950"
+                : "border-slate-200 bg-white/80 text-slate-700 hover:border-cyan-300 dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
+            }`}
+          >
+            <span className="text-sm">
+              <FaCodeBranch />
+            </span>
+            {t.projects.filterAll}
+          </button>
+
+          {technologies.map((technology) => (
             <button
-              key={category.id}
+              key={technology}
               type="button"
-              onClick={() => setActiveCategory(category.id)}
+              onClick={() => setActiveTechnology(technology)}
               className={`focus-ring inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
-                activeCategory === category.id
+                activeTechnology === technology
                   ? "border-cyan-300 bg-cyan-300 text-slate-950"
                   : "border-slate-200 bg-white/80 text-slate-700 hover:border-cyan-300 dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
               }`}
             >
-              <span className="text-sm">{category.icon}</span>
-              {labelMap[category.id]}
+              {technology}
             </button>
           ))}
         </div>
