@@ -18,6 +18,7 @@ export default function Project({
 }: ProjectProps) {
   const { t } = useLanguage();
   const projectText = t.projects[id];
+  const hasContribution = projectText.contribution.trim().length > 0;
 
   return (
     <motion.article
@@ -83,14 +84,16 @@ export default function Project({
             </p>
           </div>
 
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-              {t.projects.contributionLabel}
-            </p>
-            <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">
-              {projectText.contribution}
-            </p>
-          </div>
+          {hasContribution ? (
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+                {t.projects.contributionLabel}
+              </p>
+              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                {projectText.contribution}
+              </p>
+            </div>
+          ) : null}
 
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">

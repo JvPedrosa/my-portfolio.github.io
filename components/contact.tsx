@@ -56,7 +56,11 @@ export default function Contact({ contactFormEnabled }: ContactProps) {
         {t.sectionHeadings.contact}
       </SectionHeading>
 
-      <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+      <div
+        className={`grid gap-8 ${
+          contactFormEnabled ? "lg:grid-cols-[0.95fr_1.05fr]" : ""
+        }`}
+      >
         <div className="space-y-6">
           <p className="text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
             {t.contact.intro}
@@ -125,50 +129,52 @@ export default function Contact({ contactFormEnabled }: ContactProps) {
           </div>
         </div>
 
-        <div className="rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
-          <h3 className="text-xl font-semibold text-slate-950 dark:text-white">
-            {t.contact.formTitle}
-          </h3>
-          <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-            {t.contact.formDescription}
-          </p>
-          {!contactFormEnabled ? (
-            <p className="mt-4 rounded-2xl border border-amber-300/30 bg-amber-400/10 px-4 py-3 text-sm leading-6 text-amber-900 dark:text-amber-100">
-              {t.contact.unavailable}
+        {contactFormEnabled ? (
+          <div className="rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
+            <h3 className="text-xl font-semibold text-slate-950 dark:text-white">
+              {t.contact.formTitle}
+            </h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+              {t.contact.formDescription}
             </p>
-          ) : null}
 
-          <form className="mt-6 grid gap-4" onSubmit={handleSubmit}>
-            <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-              {t.contact.emailInputLabel}
-              <input
-                name="senderEmail"
-                type="email"
-                required
-                maxLength={500}
-                placeholder={t.contact.emailPlaceholder}
-                disabled={!contactFormEnabled || pending}
-                className="focus-ring h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-slate-900 placeholder:text-slate-400 disabled:cursor-not-allowed disabled:opacity-70 dark:border-white/10 dark:bg-slate-950/60 dark:text-white dark:placeholder:text-slate-500"
-              />
-            </label>
+            <form className="mt-6 grid gap-4" onSubmit={handleSubmit}>
+              <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+                {t.contact.emailInputLabel}
+                <input
+                  name="senderEmail"
+                  type="email"
+                  required
+                  maxLength={500}
+                  placeholder={t.contact.emailPlaceholder}
+                  disabled={pending}
+                  className="focus-ring h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-slate-900 placeholder:text-slate-400 disabled:cursor-not-allowed disabled:opacity-70 dark:border-white/10 dark:bg-slate-950/60 dark:text-white dark:placeholder:text-slate-500"
+                />
+              </label>
 
-            <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-              {t.contact.messageInputLabel}
-              <textarea
-                name="message"
-                required
-                maxLength={5000}
-                placeholder={t.contact.messagePlaceholder}
-                disabled={!contactFormEnabled || pending}
-                className="focus-ring min-h-44 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 text-slate-900 placeholder:text-slate-400 disabled:cursor-not-allowed disabled:opacity-70 dark:border-white/10 dark:bg-slate-950/60 dark:text-white dark:placeholder:text-slate-500"
-              />
-            </label>
+              <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+                {t.contact.messageInputLabel}
+                <textarea
+                  name="message"
+                  required
+                  maxLength={5000}
+                  placeholder={t.contact.messagePlaceholder}
+                  disabled={pending}
+                  className="focus-ring min-h-44 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 text-slate-900 placeholder:text-slate-400 disabled:cursor-not-allowed disabled:opacity-70 dark:border-white/10 dark:bg-slate-950/60 dark:text-white dark:placeholder:text-slate-500"
+                />
+              </label>
 
-            <div className="pt-2">
-              <SubmitBtn pending={pending} disabled={!contactFormEnabled} />
-            </div>
-          </form>
-        </div>
+              <div className="pt-2">
+                <SubmitBtn pending={pending} />
+              </div>
+            </form>
+          </div>
+        ) : (
+          <div className="rounded-[1.75rem] border border-amber-300/30 bg-amber-400/10 p-6 text-sm leading-7 text-amber-100">
+            <p className="font-semibold text-amber-50">{t.contact.formTitle}</p>
+            <p className="mt-3">{t.contact.unavailable}</p>
+          </div>
+        )}
       </div>
     </motion.section>
   );

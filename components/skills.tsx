@@ -10,6 +10,9 @@ import SectionHeading from "./section-heading";
 export default function Skills() {
   const { ref } = useSectionInView("skills");
   const { t } = useLanguage();
+  const visibleCategories = skillCategories.filter(
+    (category) => category.skills.length > 0
+  );
 
   return (
     <section
@@ -26,7 +29,7 @@ export default function Skills() {
       </p>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-        {skillCategories.map((category, index) => (
+        {visibleCategories.map((category, index) => (
           <motion.article
             key={category.id}
             initial={{ opacity: 0, y: 24 }}
@@ -47,21 +50,15 @@ export default function Skills() {
             </div>
 
             <ul className="mt-5 flex flex-wrap gap-2">
-              {category.skills.length > 0 ? (
-                category.skills.map((skill) => (
-                  <li
-                    key={skill.skill}
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700 dark:border-white/10 dark:bg-slate-950/60 dark:text-slate-200"
-                  >
-                    <span className="text-base">{skill.icon}</span>
-                    {skill.skill}
-                  </li>
-                ))
-              ) : (
-                <li className="rounded-2xl border border-dashed border-slate-300 bg-slate-50/70 px-4 py-3 text-sm leading-6 text-slate-500 dark:border-white/15 dark:bg-slate-950/50 dark:text-slate-400">
-                  {t.skills.emptyState}
+              {category.skills.map((skill) => (
+                <li
+                  key={skill.skill}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700 dark:border-white/10 dark:bg-slate-950/60 dark:text-slate-200"
+                >
+                  <span className="text-base">{skill.icon}</span>
+                  {skill.skill}
                 </li>
-              )}
+              ))}
             </ul>
           </motion.article>
         ))}

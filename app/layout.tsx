@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeContextProvider from "@/context/theme-context";
 import LanguageContextProvider from "@/context/language-context";
 import { siteConfig } from "@/lib/data";
 
@@ -68,12 +67,10 @@ export default function RootLayout({
         <div className="site-orb site-orb-one" aria-hidden="true" />
         <div className="site-orb site-orb-two" aria-hidden="true" />
         <LanguageContextProvider>
-          <ThemeContextProvider>
-            <ActiveSectionContextProvider>
-              <Header />
-              {children}
-            </ActiveSectionContextProvider>
-          </ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Header />
+            {children}
+          </ActiveSectionContextProvider>
         </LanguageContextProvider>
       </body>
     </html>

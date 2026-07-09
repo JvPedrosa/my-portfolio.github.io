@@ -11,7 +11,6 @@ const en: Dictionary = {
     contact: "Contact",
     openMenu: "Open menu",
     closeMenu: "Close menu",
-    theme: "Toggle theme",
     language: "Toggle language",
   },
   sectionHeadings: {
@@ -236,8 +235,7 @@ const en: Dictionary = {
         "A complete real estate launch platform with a live sales board, secure online reservations, role-based access, proposals, payments, and management reports.",
       problem:
         "Centralize the real estate launch sales process into a more organized and trackable digital experience.",
-      contribution:
-        "TODO: add your detailed participation, scope, or ownership in this product.",
+      contribution: "",
       features: [
         "Live sales availability board.",
         "Online reservations and role-based access.",
@@ -250,8 +248,7 @@ const en: Dictionary = {
         "Personal finance dashboard with authentication, transaction CRUD, and an expenses-by-category chart. Backend powered by Postgres and Supabase Row Level Security.",
       problem:
         "Make personal expense tracking easier through a simple, visual, and secure dashboard.",
-      contribution:
-        "TODO: add your detailed participation, scope, or ownership in this product.",
+      contribution: "",
       features: [
         "Authentication and transaction management.",
         "Category visualization with charts.",
@@ -264,8 +261,7 @@ const en: Dictionary = {
         "Interactive Texas Hold'em simulator with a visual table for four players, full betting flow, automatic hand evaluation, and AI opponents.",
       problem:
         "Turn the Texas Hold'em rules and phases into an interactive experience that is easy to follow.",
-      contribution:
-        "TODO: add your detailed participation, scope, or ownership in this product.",
+      contribution: "",
       features: [
         "Visual table for four players.",
         "Betting system with complete round progression.",
@@ -290,8 +286,6 @@ const en: Dictionary = {
   skills: {
     intro:
       "I grouped the stack by area to show where I have the strongest depth today and where I can also contribute across the full product flow.",
-    emptyState:
-      "TODO: add real tools and practices for this category when they belong in your background.",
     categories: {
       frontend: "Frontend",
       backend: "Backend",

@@ -35,7 +35,7 @@ Abra `http://localhost:3000`.
 Crie um arquivo `.env.local` se quiser habilitar o formulário:
 
 ```bash
-RESEND_API_KEY=your_key_here
+RESEND_API_KEY=
 ```
 
 Sem essa variável, o formulário permanece visível, mas bloqueado com mensagem explicando que a integração ainda precisa ser configurada.

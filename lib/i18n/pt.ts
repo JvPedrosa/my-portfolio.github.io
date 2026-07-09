@@ -9,7 +9,6 @@ const pt = {
     contact: "Contato",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
-    theme: "Alternar tema",
     language: "Alternar idioma",
   },
   sectionHeadings: {
@@ -238,8 +237,7 @@ const pt = {
         "Plataforma completa para lançamentos imobiliários, com espelho de vendas em tempo real, reservas online seguras, diferentes perfis de acesso, propostas, pagamentos e relatórios gerenciais.",
       problem:
         "Centralizar o processo comercial de lançamentos imobiliários em uma experiência digital mais organizada e acompanhável.",
-      contribution:
-        "TODO: adicionar sua participação detalhada no produto, escopo ou ownership.",
+      contribution: "",
       features: [
         "Espelho de vendas com atualização em tempo real.",
         "Reservas online e diferentes perfis de acesso.",
@@ -252,8 +250,7 @@ const pt = {
         "Dashboard de controle financeiro pessoal com autenticação, CRUD de transações e gráfico de despesas por categoria. Backend com Postgres e Row Level Security via Supabase.",
       problem:
         "Organizar despesas pessoais com uma visão simples, visual e segura do histórico financeiro.",
-      contribution:
-        "TODO: adicionar sua participação detalhada no produto, escopo ou ownership.",
+      contribution: "",
       features: [
         "Autenticação e gestão de transações.",
         "Visualização por categoria com gráfico.",
@@ -266,8 +263,7 @@ const pt = {
         "Simulador interativo de Texas Hold'em com mesa visual para 4 jogadores, sistema completo de apostas, avaliação automática de mãos e IA para adversários. Inclui todas as fases do jogo e animações.",
       problem:
         "Transformar regras e etapas do Texas Hold'em em uma experiência interativa e fácil de acompanhar.",
-      contribution:
-        "TODO: adicionar sua participação detalhada no produto, escopo ou ownership.",
+      contribution: "",
       features: [
         "Mesa visual para quatro jogadores.",
         "Sistema de apostas com progressão completa da rodada.",
@@ -292,8 +288,6 @@ const pt = {
   skills: {
     intro:
       "Organizei a stack por área para mostrar onde tenho mais profundidade técnica hoje e onde também consigo colaborar no fluxo completo do produto.",
-    emptyState:
-      "TODO: adicionar ferramentas e práticas reais desta categoria quando fizer sentido no seu histórico.",
     categories: {
       frontend: "Frontend",
       backend: "Backend",
