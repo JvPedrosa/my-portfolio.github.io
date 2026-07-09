@@ -6,50 +6,103 @@ const en: Dictionary = {
     about: "About",
     education: "Education",
     projects: "Projects",
-    skills: "Skills",
+    skills: "Stack",
     experience: "Experience",
     contact: "Contact",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    theme: "Toggle theme",
+    language: "Toggle language",
   },
   sectionHeadings: {
     about: "About me",
     education: "Education",
-    projects: "My projects",
-    skills: "Skills",
-    experience: "My Experience",
-    contact: "Contact",
+    projects: "Featured projects",
+    skills: "Stack and skills",
+    experience: "Work experience",
+    contact: "Let's talk",
   },
   intro: {
+    eyebrow: "Frontend-first mindset with full stack execution",
     greeting: "Hi, I'm",
-    role: "a Full-Stack Developer focused on Front-End, with experience building websites and web apps using",
-    stack: "Vue.js, React, Node.js and TypeScript",
+    title:
+      "Full Stack Developer focused on modern, scalable, and intuitive frontend experiences.",
+    description:
+      "I build web products with close attention to user experience, visual consistency, API integration, and maintainable code.",
+    specialties: [
+      "Frontend is my main focus",
+      "Hands-on full stack product experience",
+      "Responsive, accessible, and performant UI",
+    ],
+    primaryCta: "View projects",
+    secondaryCta: "Get in touch",
     contactBtn: "Contact",
-    downloadCv: "Download my CV",
-    generatingCv: "Generating...",
+    downloadCv: "Download resume",
+    generatingCv: "Generating resume...",
+    socialLabel: "Professional profiles",
+    availabilityTitle: "Specialties",
+    availabilityText:
+      "React, Vue.js, Next.js, Node.js, TypeScript, and close collaboration with product teams.",
+    imageAlt: "Profile photo of João Victor Pedrosa",
   },
   about: {
-    paragraph1Start:
-      "Computer Science student at Universidade Federal da Paraíba (UFPB) and passionate about the art of solving problems through code. My motivation comes from tackling challenges and finding effective solutions. I have experience with technologies like",
-    paragraph1Bold1: "React, Vue.js, and TypeScript",
-    paragraph1Mid: ", and I also work with",
-    paragraph1Bold2: "Node.js and Next.js.",
-    paragraph1End:
-      "I currently work as a Full-Stack Developer at Zoox Smart Data, where I put my passion for building innovative solutions to work, always looking to sharpen my skills and learn new technologies.",
-    paragraph2Start:
-      "When I'm not coding, I like to work out — I'm a former competitive swimmer, and it's become my hobby today. I also enjoy watching movies, good food, and of course,",
-    paragraph2Bold1: "learning new things",
-    paragraph2Mid: ". Currently, I'm broadening my horizons by studying a bit of",
-    paragraph2Bold2: "GoLang",
+    intro:
+      "I work on web applications and interfaces with a real interest in user experience, frontend architecture, and continuous product evolution.",
+    summary:
+      "I'm a Computer Science graduate from UFPB and I work as a full stack developer, with deeper focus on frontend. I enjoy turning requirements into clear, accessible, and well-structured interfaces while staying mindful of backend integration and code quality.",
+    workingStyle:
+      "My experience includes React, Vue.js, TypeScript, Next.js, and Node.js. In day-to-day work, I try to balance usability, performance, and technical organization to deliver consistent solutions.",
+    interests:
+      "I'm also interested in interface design, user experience, and building products that make sense both for the people using them and for the team maintaining them.",
+    goals:
+      "My goal is to keep growing as a software engineer with strong frontend ownership, contributing to teams that value product quality, collaboration, and continuous learning.",
+    cards: {
+      role: {
+        title: "Area of work",
+        description: "Web development with frontend focus and full stack delivery.",
+      },
+      stack: {
+        title: "Core technologies",
+        description: "React, Vue.js, TypeScript, Next.js, Node.js, and relational and NoSQL databases.",
+      },
+      approach: {
+        title: "How I work",
+        description: "Organized interfaces, reliable integrations, and maintainable implementation.",
+      },
+      nextStep: {
+        title: "Next step",
+        description: "Keep deepening my role in product and digital experience work.",
+      },
+    },
   },
   contact: {
-    intro: "Get in touch through the form below",
-    introVia: "or send an email to",
-    emailPlaceholder: "Enter your email",
-    messagePlaceholder: "Enter your message",
-    errorPrefix: "Failed to send email: ",
-    success: "Email sent successfully!",
+    intro:
+      "If you need someone to build thoughtful interfaces and web products with a practical product mindset, let's talk.",
+    introVia: "Or, if you prefer, reach out directly via",
+    emailLabel: "Email",
+    linkedinLabel: "LinkedIn",
+    githubLabel: "GitHub",
+    formTitle: "Quick message",
+    formDescription:
+      "Use the form if the email service is configured. Otherwise, my direct email remains the main contact channel.",
+    emailPlaceholder: "you@company.com",
+    messagePlaceholder: "Tell me a bit about the project, role, or context behind your message.",
+    emailInputLabel: "Your email",
+    messageInputLabel: "Your message",
+    errorPrefix: "Message failed to send: ",
+    success: "Message sent successfully!",
+    unavailable:
+      "The form still needs email service configuration. For now, please use the direct contact options above.",
+    submit: "Send message",
+    availability: "Open to professional opportunities and conversations.",
+    cvLabel: "Download resume",
   },
-  submitBtn: "Send",
-  footer: "© Built by João Victor Pedrosa 2024. All rights reserved.",
+  submitBtn: {
+    idle: "Send message",
+    pending: "Sending...",
+  },
+  footer:
+    "Portfolio built to present experience in frontend, product thinking, and full stack development.",
   notFound: {
     title: "Oops! This page ran away.",
     subtitle:
@@ -57,9 +110,10 @@ const en: Dictionary = {
     backHome: "Back to home",
   },
   education: {
-    degree: "Computer Science Student",
+    degree: "Bachelor's degree in Computer Science",
     institution: "Universidade Federal da Paraíba (UFPB)",
     period: "2019 - 2024",
+    status: "Academic background in computing, web development, and problem solving.",
   },
   cv: {
     jobTitle: "Full-Stack Developer",
@@ -77,6 +131,11 @@ const en: Dictionary = {
     ],
   },
   experiences: {
+    intro:
+      "My path combines interface work, API integration, legacy systems, and products with different business contexts.",
+    durationLabel: "Duration",
+    skillsLabel: "Technologies",
+    contributionsLabel: "Key contributions",
     zoox: {
       title: "Full-Stack Developer",
       period: "Jul 2024 to present",
@@ -84,6 +143,11 @@ const en: Dictionary = {
       location: "Remote",
       description:
         "Building web applications with Vue.js and Vuex on the front-end, plus building and integrating Node.js APIs and modeling data with PostgreSQL and MongoDB on the back-end.",
+      contributions: [
+        "Built and evolved interfaces for web applications.",
+        "Integrated APIs and flows between front-end and back-end.",
+        "Modeled and maintained data in PostgreSQL and MongoDB.",
+      ],
     },
     controlIt: {
       title: "Front-End Developer",
@@ -91,7 +155,12 @@ const en: Dictionary = {
       duration: "9 months",
       location: "Remote",
       description:
-        "Building dynamic, responsive interfaces focused on integrating wireless IoT devices to remotely manage environments, machines, equipment, and people.",
+        "Built dynamic, responsive interfaces focused on integrating wireless IoT devices to remotely manage environments, machines, equipment, and people.",
+      contributions: [
+        "Built responsive screens for remote environment operation.",
+        "Improved visual flows for connected-device scenarios.",
+        "Worked with a strong focus on UI clarity and usability.",
+      ],
     },
     lienoFulltime: {
       title: "Front-End Developer",
@@ -100,6 +169,11 @@ const en: Dictionary = {
       location: "Hybrid, João Pessoa",
       description:
         "Refactored and optimized applications using React.js and Redux.js, improving system efficiency and responsiveness. On another project, I modernized legacy code using Visual Basic.NET, making the systems easier to maintain and improving user satisfaction.",
+      contributions: [
+        "Refactored applications built with React.js and Redux.js.",
+        "Improved responsiveness and organization in existing systems.",
+        "Modernized legacy code in Visual Basic.NET.",
+      ],
     },
     lienoIntern: {
       title: "Front-End Internship",
@@ -108,6 +182,11 @@ const en: Dictionary = {
       location: "João Pessoa",
       description:
         "In my first role in the private sector, I focused on building features mainly with React.js and Redux.js. My efforts centered on improving the user experience, making interfaces more interactive and accessible.",
+      contributions: [
+        "Delivered features with React.js and Redux.js.",
+        "Improved interaction quality and interface accessibility.",
+        "Built practical experience inside product and delivery routines.",
+      ],
     },
     ufpbIntern: {
       title: "Front-End Internship",
@@ -116,6 +195,11 @@ const en: Dictionary = {
       location: "Remote",
       description:
         "Built a site for promoting and engaging students with the university's outreach projects using WordPress, along with custom development using HTML, JavaScript, and CSS.",
+      contributions: [
+        "Built a web presence for outreach initiatives.",
+        "Created custom work with HTML, JavaScript, and CSS.",
+        "Supported communication and engagement with students.",
+      ],
     },
     ufpbVolunteer: {
       title: "Outreach Project Volunteer",
@@ -124,31 +208,97 @@ const en: Dictionary = {
       location: "Hybrid, João Pessoa",
       description:
         "Edited educational videos for online courses, contributing to university outreach projects.",
+      contributions: [
+        "Produced and edited educational materials.",
+        "Supported communication for university projects.",
+      ],
     },
   },
   projects: {
-    github: "GitHub",
-    demo: "Demo",
+    intro:
+      "I selected projects that show my work across interfaces, data integration, and web product development with different scopes.",
+    github: "Code",
+    demo: "Live demo",
     privateRepository: "Private repository",
+    featuredLabel: "Featured project",
+    technologiesLabel: "Technologies",
+    problemLabel: "Problem solved",
+    contributionLabel: "My contribution",
+    featuresLabel: "Main features",
+    filterAll: "All",
+    filterFrontend: "Frontend",
+    filterFullstack: "Full stack",
+    filterStudy: "Study",
+    filterPersonal: "Personal",
     realEstate: {
       title: "Real Estate Launch Platform",
       description:
-        "Full-featured platform for real estate launches with a live sales availability board, secure online reservations, role-based access, proposals, payments, and management reports.",
+        "A complete real estate launch platform with a live sales board, secure online reservations, role-based access, proposals, payments, and management reports.",
+      problem:
+        "Centralize the real estate launch sales process into a more organized and trackable digital experience.",
+      contribution:
+        "TODO: add your detailed participation, scope, or ownership in this product.",
+      features: [
+        "Live sales availability board.",
+        "Online reservations and role-based access.",
+        "Proposal, payment, and reporting flows.",
+      ],
     },
     financeTracker: {
       title: "Finance Tracker",
       description:
-        "Personal finance dashboard with authentication, transaction CRUD, and an expenses-by-category chart. Backend with Postgres and Row Level Security via Supabase.",
+        "Personal finance dashboard with authentication, transaction CRUD, and an expenses-by-category chart. Backend powered by Postgres and Supabase Row Level Security.",
+      problem:
+        "Make personal expense tracking easier through a simple, visual, and secure dashboard.",
+      contribution:
+        "TODO: add your detailed participation, scope, or ownership in this product.",
+      features: [
+        "Authentication and transaction management.",
+        "Category visualization with charts.",
+        "Postgres persistence and security via Supabase.",
+      ],
     },
     pokerSimulator: {
       title: "Poker Simulator",
       description:
-        "Interactive Texas Hold'em simulator with a visual table for 4 players, a full betting system, automatic hand evaluation, and AI opponents. Includes every stage of the game and animations.",
+        "Interactive Texas Hold'em simulator with a visual table for four players, full betting flow, automatic hand evaluation, and AI opponents.",
+      problem:
+        "Turn the Texas Hold'em rules and phases into an interactive experience that is easy to follow.",
+      contribution:
+        "TODO: add your detailed participation, scope, or ownership in this product.",
+      features: [
+        "Visual table for four players.",
+        "Betting system with complete round progression.",
+        "Automatic hand evaluation and AI-controlled opponents.",
+      ],
     },
     portfolio: {
       title: "My Portfolio",
       description:
-        "Personal portfolio built with Next.js 14, TypeScript, and Tailwind CSS. Showcases my experience, skills, and projects in a modern, responsive layout.",
+        "Personal portfolio built with Next.js 14, TypeScript, and Tailwind CSS. It presents my experience, skills, and projects in a modern responsive layout.",
+      problem:
+        "Present experience, skills, and projects in a professional, objective, and easy-to-navigate way.",
+      contribution:
+        "Content structuring, interface design, i18n, PDF resume generation, and continuous experience improvements.",
+      features: [
+        "Section-based navigation focused on readability.",
+        "Internationalization and PDF resume download.",
+        "Responsive layout highlighting experience and projects.",
+      ],
+    },
+  },
+  skills: {
+    intro:
+      "I grouped the stack by area to show where I have the strongest depth today and where I can also contribute across the full product flow.",
+    emptyState:
+      "TODO: add real tools and practices for this category when they belong in your background.",
+    categories: {
+      frontend: "Frontend",
+      backend: "Backend",
+      database: "Databases",
+      tools: "Tools",
+      cloud: "Cloud and infrastructure",
+      quality: "Quality and testing",
     },
   },
 };

@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  Html,
   Body,
+  Container,
   Head,
   Heading,
   Hr,
-  Container,
+  Html,
   Preview,
   Section,
   Text,
@@ -24,17 +24,21 @@ export default function ContactFormEmail({
   return (
     <Html>
       <Head />
-      <Preview>New message from your portfolio site</Preview>
+      <Preview>Nova mensagem enviada pelo portfólio</Preview>
       <Tailwind>
-        <Body className="bg-gray-100 text-black">
-          <Container>
-            <Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
-              <Heading className="leading-tight">
-                You received the following message from the contact form
+        <Body className="bg-slate-100 py-10 text-slate-950">
+          <Container className="mx-auto max-w-xl">
+            <Section className="rounded-2xl border border-slate-200 bg-white px-8 py-6 shadow-sm">
+              <Heading className="m-0 text-2xl leading-tight">
+                Nova mensagem do formulário de contato
               </Heading>
-              <Text>{message}</Text>
-              <Hr />
-              <Text>The sender's email is: {senderEmail}</Text>
+              <Text className="mb-0 mt-5 text-sm leading-7 text-slate-700">
+                {message}
+              </Text>
+              <Hr className="my-6 border-slate-200" />
+              <Text className="m-0 text-sm text-slate-600">
+                E-mail de resposta: {senderEmail}
+              </Text>
             </Section>
           </Container>
         </Body>

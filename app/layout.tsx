@@ -1,28 +1,55 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
-import LanguageSwitch from "@/components/language-switch";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
 import LanguageContextProvider from "@/context/language-context";
-
-const inter = Inter({ subsets: ["latin"] });
+import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "João Victor | Portfolio",
-  description: "João Victor é um desenvolvedor full-stack com foco em front-end.",
+  metadataBase: new URL(siteConfig.websiteUrl),
+  title: {
+    default: `${siteConfig.firstName} | Desenvolvedor Frontend e Full Stack`,
+    template: `%s | ${siteConfig.firstName}`,
+  },
+  description:
+    "Portfólio de João Victor Pedrosa, desenvolvedor com foco em frontend e experiência full stack em interfaces modernas, integrações e produtos web.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "João Victor | Portfolio",
-    description: "João Victor é um desenvolvedor full-stack com foco em front-end.",
+    title: `${siteConfig.firstName} | Desenvolvedor Frontend e Full Stack`,
+    description:
+      "Projetos, experiência profissional e stack de João Victor Pedrosa em um portfólio moderno e responsivo.",
+    url: siteConfig.websiteUrl,
     locale: "pt_BR",
     type: "website",
+    siteName: `${siteConfig.firstName} Portfolio`,
+    images: ["/opengraph-image"],
   },
   twitter: {
-    card: "summary",
-    title: "João Victor | Portfolio",
-    description: "João Victor é um desenvolvedor full-stack com foco em front-end.",
+    card: "summary_large_image",
+    title: `${siteConfig.firstName} | Desenvolvedor Frontend e Full Stack`,
+    description:
+      "Projetos, experiência profissional e stack de João Victor Pedrosa em um portfólio moderno e responsivo.",
+    images: ["/twitter-image"],
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  keywords: [
+    "João Victor Pedrosa",
+    "Desenvolvedor Frontend",
+    "Desenvolvedor Full Stack",
+    "Next.js",
+    "React",
+    "Vue.js",
+    "TypeScript",
+  ],
 };
 
 export default function RootLayout({
@@ -31,17 +58,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="!scroll-smooth">
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
-      >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
-
+    <html lang="pt-BR" className="scroll-smooth" suppressHydrationWarning>
+      <body className="bg-[var(--color-bg)] text-[var(--color-text)] antialiased">
+        <div className="site-noise" aria-hidden="true" />
+        <div className="site-orb site-orb-one" aria-hidden="true" />
+        <div className="site-orb site-orb-two" aria-hidden="true" />
         <LanguageContextProvider>
           <ThemeContextProvider>
             <ActiveSectionContextProvider>
-              <LanguageSwitch />
               <Header />
               {children}
             </ActiveSectionContextProvider>

@@ -2,25 +2,34 @@
 
 import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
-import { useFormStatus } from "react-dom";
 import { useLanguage } from "@/context/language-context";
 
-export default function SubmitBtn() {
-  const { pending } = useFormStatus();
+type SubmitBtnProps = {
+  pending: boolean;
+  disabled?: boolean;
+};
+
+export default function SubmitBtn({
+  pending,
+  disabled = false,
+}: SubmitBtnProps) {
   const { t } = useLanguage();
 
   return (
     <button
       type="submit"
-      className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
-      disabled={pending}
+      disabled={disabled || pending}
+      className="focus-ring inline-flex h-12 items-center justify-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-65 dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200"
     >
       {pending ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+        <>
+          {t.submitBtn.pending}
+          <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-r-transparent" />
+        </>
       ) : (
         <>
-          {t.submitBtn}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
+          {t.submitBtn.idle}
+          <FaPaperPlane className="text-xs" />
         </>
       )}
     </button>

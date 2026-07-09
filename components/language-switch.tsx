@@ -1,35 +1,45 @@
 "use client";
 
 import React from "react";
-import { useLanguage } from "@/context/language-context";
 import clsx from "clsx";
+import { useLanguage } from "@/context/language-context";
 
-export default function LanguageSwitch() {
-  const { language, toggleLanguage } = useLanguage();
+type LanguageSwitchProps = {
+  className?: string;
+};
+
+export default function LanguageSwitch({
+  className = "",
+}: LanguageSwitchProps) {
+  const { language, toggleLanguage, t } = useLanguage();
 
   return (
     <button
+      type="button"
       onClick={toggleLanguage}
-      aria-label="Toggle language"
-      className="fixed right-4 top-3 z-[999] flex items-center gap-1.5 rounded-full border border-white border-opacity-40 bg-white bg-opacity-80 px-3 py-2 text-sm font-medium shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] transition hover:scale-105 dark:border-black/40 dark:bg-gray-950 dark:bg-opacity-75 sm:right-8 sm:top-6"
+      aria-label={t.nav.language}
+      className={clsx(
+        "inline-flex h-11 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-300/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950",
+        className
+      )}
     >
       <span
         className={clsx(
-          "transition",
+          "rounded-full px-2 py-1 transition",
           language === "pt"
-            ? "text-gray-950 dark:text-gray-200"
-            : "text-gray-400 dark:text-gray-600"
+            ? "bg-cyan-300 text-slate-950"
+            : "text-slate-400"
         )}
       >
         PT
       </span>
-      <span className="text-gray-300 dark:text-gray-700">|</span>
+      <span className="text-slate-600">/</span>
       <span
         className={clsx(
-          "transition",
+          "rounded-full px-2 py-1 transition",
           language === "en"
-            ? "text-gray-950 dark:text-gray-200"
-            : "text-gray-400 dark:text-gray-600"
+            ? "bg-cyan-300 text-slate-950"
+            : "text-slate-400"
         )}
       >
         EN
