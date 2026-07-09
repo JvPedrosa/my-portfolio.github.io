@@ -199,6 +199,7 @@ export const projectsData: {
       "ERP",
     ],
     githubUrl: "https://github.com/JvPedrosa/erp-construtora",
+    demoUrl: "https://erp-construtora-rho.vercel.app",
     githubPrivate: true,
     accentClassName: "from-teal-400/35 via-cyan-500/20 to-transparent",
   },
