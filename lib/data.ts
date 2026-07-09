@@ -38,6 +38,7 @@ export type SectionId =
   | "contact";
 
 export type ProjectId =
+  | "erpConstrutora"
   | "realEstate"
   | "financeTracker"
   | "pokerSimulator"
@@ -185,6 +186,22 @@ export const projectsData: {
   githubPrivate?: boolean;
   accentClassName: string;
 }[] = [
+  {
+    id: "erpConstrutora",
+    category: "fullstack",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "SQLite",
+      "RBAC",
+      "ERP",
+    ],
+    githubUrl: "https://github.com/JvPedrosa/erp-construtora",
+    githubPrivate: true,
+    accentClassName: "from-teal-400/35 via-cyan-500/20 to-transparent",
+  },
   {
     id: "realEstate",
     category: "fullstack",

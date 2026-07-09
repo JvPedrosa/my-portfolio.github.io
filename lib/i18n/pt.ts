@@ -235,6 +235,20 @@ const pt = {
     filterFullstack: "Full stack",
     filterStudy: "Estudos",
     filterPersonal: "Pessoais",
+    erpConstrutora: {
+      title: "ERP Financeiro para Construtora",
+      description:
+        "Primeira etapa de um ERP para construtoras, com módulo financeiro funcional, autenticação, permissões, multiempresa, documentos fiscais, contas a pagar e receber, fluxo de caixa e DRE.",
+      problem:
+        "Centralizar rotinas financeiras e fiscais de uma construtora sem misturar dados entre CNPJs, obras, centros de custo e contas bancárias.",
+      contribution:
+        "Estruturei o repositório, modelei o banco, implementei backend, frontend, regras financeiras, auditoria, relatórios e testes automatizados.",
+      features: [
+        "RBAC validado no backend e isolamento multiempresa.",
+        "Contas a pagar/receber com parcelamento, aprovação e baixas.",
+        "Dashboard, fluxo de caixa, DRE e gerenciador de documentos fiscais.",
+      ],
+    },
     realEstate: {
       title: "Plataforma de Lançamentos Imobiliários",
       description:

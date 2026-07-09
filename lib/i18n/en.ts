@@ -232,6 +232,20 @@ const en: Dictionary = {
     filterFullstack: "Full stack",
     filterStudy: "Study",
     filterPersonal: "Personal",
+    erpConstrutora: {
+      title: "Construction Finance ERP",
+      description:
+        "First stage of an ERP for construction companies, with a functional finance module, authentication, permissions, multi-company support, fiscal documents, payables, receivables, cash flow, and DRE reporting.",
+      problem:
+        "Centralize financial and fiscal operations for a construction business without mixing data across tax IDs, projects, cost centers, and bank accounts.",
+      contribution:
+        "Structured the repository, modeled the database, and implemented backend, frontend, financial rules, audit logs, reports, and automated tests.",
+      features: [
+        "Backend-enforced RBAC and multi-company isolation.",
+        "Payables and receivables with installments, approval, and settlement rules.",
+        "Dashboard, cash flow, DRE, and fiscal document manager.",
+      ],
+    },
     realEstate: {
       title: "Real Estate Launch Platform",
       description:
