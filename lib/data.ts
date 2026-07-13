@@ -184,6 +184,11 @@ export const projectsData: {
   githubUrl?: string;
   demoUrl?: string;
   githubPrivate?: boolean;
+  preview: {
+    type: "image" | "video";
+    src: string;
+    poster?: string;
+  };
   accentClassName: string;
 }[] = [
   {
@@ -201,6 +206,7 @@ export const projectsData: {
     githubUrl: "https://github.com/JvPedrosa/erp-construtora",
     demoUrl: "https://erp-construtora-rho.vercel.app",
     githubPrivate: true,
+    preview: { type: "image", src: "/projects/erp-construtora.png" },
     accentClassName: "from-teal-400/35 via-cyan-500/20 to-transparent",
   },
   {
@@ -217,6 +223,7 @@ export const projectsData: {
     githubUrl: "https://github.com/JvPedrosa/realestate-launch-platform",
     demoUrl: "https://realestate-launch-platform.vercel.app",
     githubPrivate: true,
+    preview: { type: "image", src: "/projects/real-estate.png" },
     accentClassName: "from-cyan-400/40 via-sky-500/20 to-transparent",
   },
   {
@@ -225,6 +232,7 @@ export const projectsData: {
     tags: ["Nuxt.js", "Vue.js", "Vuetify", "Supabase", "TypeScript"],
     githubUrl: "https://github.com/JvPedrosa/finance-tracker",
     demoUrl: "https://finance-tracker-chi-flax-70.vercel.app",
+    preview: { type: "image", src: "/projects/finance-tracker.png" },
     accentClassName: "from-emerald-400/40 via-teal-500/20 to-transparent",
   },
   {
@@ -233,6 +241,7 @@ export const projectsData: {
     tags: ["Nuxt.js", "Vue.js", "TypeScript", "Vite"],
     githubUrl: "https://github.com/JvPedrosa/poker-simulator",
     demoUrl: "https://poker-simulator-green.vercel.app/",
+    preview: { type: "image", src: "/projects/poker-simulator.png" },
     accentClassName: "from-amber-400/35 via-orange-500/20 to-transparent",
   },
   {
@@ -241,6 +250,7 @@ export const projectsData: {
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
     githubUrl: "https://github.com/JvPedrosa/my-portfolio.github.io",
     demoUrl: "https://my-portfolio-liart-one-93.vercel.app",
+    preview: { type: "image", src: "/projects/portfolio.png" },
     accentClassName: "from-fuchsia-400/30 via-violet-500/15 to-transparent",
   },
 ];

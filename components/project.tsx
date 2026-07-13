@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaLock } from "react-icons/fa";
 import { projectsData } from "@/lib/data";
@@ -14,6 +15,7 @@ export default function Project({
   githubUrl,
   demoUrl,
   githubPrivate,
+  preview,
   accentClassName,
 }: ProjectProps) {
   const { t } = useLanguage();
@@ -30,11 +32,44 @@ export default function Project({
       <div className={`absolute inset-x-0 top-0 h-36 bg-gradient-to-br ${accentClassName}`} />
 
       <div className="relative">
+        <a
+          href={demoUrl || githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="focus-ring relative mb-5 block aspect-video overflow-hidden rounded-[1.4rem] border border-slate-200/70 bg-slate-900 dark:border-white/10"
+          aria-label={`${t.projects.demo}: ${projectText.title}`}
+        >
+          {preview.type === "video" ? (
+            <video
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              src={preview.src}
+              poster={preview.poster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+            />
+          ) : (
+            <Image
+              src={preview.src}
+              alt={`Preview do projeto ${projectText.title}`}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+            />
+          )}
+          <span className="absolute inset-x-0 bottom-0 flex items-center justify-end bg-gradient-to-t from-slate-950/75 to-transparent p-4 pt-10 text-xs font-semibold uppercase tracking-[0.16em] text-white opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+            {t.projects.demo} <FaExternalLinkAlt className="ml-2" />
+          </span>
+        </a>
+
         <div className="rounded-[1.4rem] border border-slate-200/70 bg-slate-950 p-5 text-white dark:border-white/10">
           <div className="flex items-center justify-between gap-3">
-            <span className="rounded-full bg-white/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-cyan-200">
+            {/* <span className="rounded-full bg-white/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-cyan-200">
               {t.projects.featuredLabel}
-            </span>
+            </span> */}
             <div className="flex gap-2">
               {githubUrl ? (
                 githubPrivate ? (
