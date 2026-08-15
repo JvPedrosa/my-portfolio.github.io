@@ -44,6 +44,7 @@ export type SectionId =
   | "contact";
 
 export type ProjectId =
+  | "joaoDosTrajes"
   | "erpConstrutora"
   | "realEstate"
   | "financeTracker"
@@ -197,6 +198,23 @@ export const projectsData: {
   };
   accentClassName: string;
 }[] = [
+  {
+    id: "joaoDosTrajes",
+    category: "fullstack",
+    tags: [
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Mercado Pago",
+      "Melhor Envio",
+      "E-commerce",
+    ],
+    githubUrl: "https://github.com/JvPedrosa/joao-dos-trajes-v2",
+    githubPrivate: true,
+    preview: { type: "image", src: "/projects/joao-dos-trajes.png" },
+    accentClassName: "from-indigo-400/40 via-cyan-500/20 to-transparent",
+  },
   {
     id: "erpConstrutora",
     category: "fullstack",

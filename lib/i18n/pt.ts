@@ -249,6 +249,20 @@ const pt = {
     filterFullstack: "Full stack",
     filterStudy: "Estudos",
     filterPersonal: "Pessoais",
+    joaoDosTrajes: {
+      title: "João dos Trajes — E-commerce e Gestão",
+      description:
+        "Loja própria de trajes de natação de alta performance com catálogo responsivo, checkout, área do cliente e um painel interno para administrar pedidos, produtos, estoque, clientes e cupons.",
+      problem:
+        "Substituir uma operação dependente de plataforma terceirizada por uma experiência de venda própria, unificando vitrine, pagamento, frete e gestão interna com segurança.",
+      contribution:
+        "Estruturei o produto do zero, desenvolvi a interface da loja e do painel, modelei o banco PostgreSQL com RLS e implementei os fluxos transacionais de pedido, reserva e baixa de estoque.",
+      features: [
+        "Catálogo, produto, carrinho persistente, checkout e área do cliente.",
+        "Painel protegido para pedidos, produtos, estoque, clientes e cupons.",
+        "Integrações preparadas para Mercado Pago, Melhor Envio e webhooks assinados.",
+      ],
+    },
     erpConstrutora: {
       title: "ERP Financeiro para Construtora",
       description:
