@@ -28,6 +28,28 @@ export default function Project({
     study: t.projects.filterStudy,
     personal: t.projects.filterPersonal,
   }[category];
+  const previewHref = demoUrl || (!githubPrivate ? githubUrl : undefined);
+  const previewMedia = preview.type === "video" ? (
+    <video
+      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+      src={preview.src}
+      poster={preview.poster}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+    />
+  ) : (
+    <Image
+      src={preview.src}
+      alt={`${t.projects.previewLabel}: ${projectText.title}`}
+      fill
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+    />
+  );
 
   return (
     <motion.article
@@ -39,38 +61,24 @@ export default function Project({
       <div className={`absolute inset-x-0 top-0 h-36 bg-gradient-to-br ${accentClassName}`} />
 
       <div className="relative">
-        <a
-          href={demoUrl || githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="focus-ring relative mb-5 block aspect-video overflow-hidden rounded-[1.4rem] border border-slate-200/70 bg-slate-900 dark:border-white/10"
-          aria-label={`${t.projects.demo}: ${projectText.title}`}
-        >
-          {preview.type === "video" ? (
-            <video
-              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-              src={preview.src}
-              poster={preview.poster}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-hidden="true"
-            />
-          ) : (
-            <Image
-              src={preview.src}
-              alt={`${t.projects.previewLabel}: ${projectText.title}`}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
-            />
-          )}
-          <span className="absolute inset-x-0 bottom-0 flex items-center justify-end bg-gradient-to-t from-slate-950/75 to-transparent p-4 pt-10 text-xs font-semibold uppercase tracking-[0.16em] text-white opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
-            {t.projects.demo} <FaExternalLinkAlt className="ml-2" />
-          </span>
-        </a>
+        {previewHref ? (
+          <a
+            href={previewHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring relative mb-5 block aspect-video overflow-hidden rounded-[1.4rem] border border-slate-200/70 bg-slate-900 dark:border-white/10"
+            aria-label={`${t.projects.demo}: ${projectText.title}`}
+          >
+            {previewMedia}
+            <span className="absolute inset-x-0 bottom-0 flex items-center justify-end bg-gradient-to-t from-slate-950/75 to-transparent p-4 pt-10 text-xs font-semibold uppercase tracking-[0.16em] text-white opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+              {t.projects.demo} <FaExternalLinkAlt className="ml-2" />
+            </span>
+          </a>
+        ) : (
+          <div className="relative mb-5 aspect-video overflow-hidden rounded-[1.4rem] border border-slate-200/70 bg-slate-900 dark:border-white/10">
+            {previewMedia}
+          </div>
+        )}
 
         <div className="rounded-[1.4rem] border border-slate-200/70 bg-slate-950 p-5 text-white dark:border-white/10">
           <span className="inline-flex rounded-full bg-cyan-300/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-cyan-200 ring-1 ring-cyan-300/15">

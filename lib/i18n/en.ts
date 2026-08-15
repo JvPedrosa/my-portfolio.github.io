@@ -246,6 +246,20 @@ const en: Dictionary = {
     filterFullstack: "Full stack",
     filterStudy: "Study",
     filterPersonal: "Personal",
+    joaoDosTrajes: {
+      title: "João dos Trajes — E-commerce and Operations",
+      description:
+        "A high-performance swimwear store with a responsive catalog, checkout, customer account, and an internal dashboard for orders, products, inventory, customers, and coupons.",
+      problem:
+        "Replace a third-party commerce dependency with an owned sales experience that securely unifies storefront, payments, shipping, and internal operations.",
+      contribution:
+        "I structured the product from scratch, built the storefront and admin interfaces, modeled the PostgreSQL database with RLS, and implemented transactional order and inventory flows.",
+      features: [
+        "Catalog, product pages, persistent cart, checkout, and customer account.",
+        "Protected dashboard for orders, products, inventory, customers, and coupons.",
+        "Mercado Pago, Melhor Envio, and signed webhook integrations ready for sandbox validation.",
+      ],
+    },
     erpConstrutora: {
       title: "Construction Finance ERP",
       description:
