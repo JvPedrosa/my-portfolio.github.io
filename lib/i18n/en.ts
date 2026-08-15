@@ -12,6 +12,7 @@ const en: Dictionary = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     language: "Toggle language",
+    skipToContent: "Skip to content",
   },
   sectionHeadings: {
     about: "About me",
@@ -20,6 +21,14 @@ const en: Dictionary = {
     skills: "Stack and skills",
     experience: "Work experience",
     contact: "Let's talk",
+  },
+  sectionEyebrows: {
+    about: "Profile",
+    projects: "Selected work",
+    skills: "Capabilities",
+    experience: "Career path",
+    education: "Academic background",
+    contact: "Contact",
   },
   intro: {
     eyebrow: "Frontend-first mindset with full stack execution",
@@ -43,12 +52,15 @@ const en: Dictionary = {
     availabilityText:
       "React, Vue.js, Next.js, Node.js, TypeScript, and close collaboration with product teams.",
     imageAlt: "Profile photo of João Victor Pedrosa",
+    roleLabel: "Full Stack Developer",
+    onlineLabel: "Available",
+    techHighlights: ["React / Vue", "Next.js / Node.js", "TypeScript", "UX focused"],
   },
   about: {
     intro:
       "I work on web applications and interfaces with a real interest in user experience, frontend architecture, and continuous product evolution.",
     summary:
-      "I'm a Computer Science graduate from UFPB and I work as a full stack developer, with deeper focus on frontend. I enjoy turning requirements into clear, accessible, and well-structured interfaces while staying mindful of backend integration and code quality.",
+      "I'm a Computer Science student at UFPB and I work as a full stack developer, with deeper focus on frontend. I enjoy turning requirements into clear, accessible, and well-structured interfaces while staying mindful of backend integration and code quality.",
     workingStyle:
       "My experience includes React, Vue.js, TypeScript, Next.js, and Node.js. In day-to-day work, I try to balance usability, performance, and technical organization to deliver consistent solutions.",
     interests:
@@ -105,6 +117,7 @@ const en: Dictionary = {
   },
   footer:
     "Portfolio built to present experience in frontend, product thinking, and full stack development.",
+  copyright: "All rights reserved.",
   notFound: {
     title: "Oops! This page ran away.",
     subtitle:
@@ -112,10 +125,10 @@ const en: Dictionary = {
     backHome: "Back to home",
   },
   education: {
-    degree: "Bachelor's degree in Computer Science",
+    degree: "Computer Science undergraduate",
     institution: "Universidade Federal da Paraíba (UFPB)",
-    period: "2019 - 2024",
-    status: "Academic background in computing, web development, and problem solving.",
+    period: "2019 - present",
+    status: "Degree in progress, focused on computing, web development, and problem solving.",
   },
   cv: {
     jobTitle: "Full-Stack Developer",
@@ -227,6 +240,7 @@ const en: Dictionary = {
     problemLabel: "Problem solved",
     contributionLabel: "My contribution",
     featuresLabel: "Main features",
+    previewLabel: "Interface preview",
     filterAll: "All",
     filterFrontend: "Frontend",
     filterFullstack: "Full stack",

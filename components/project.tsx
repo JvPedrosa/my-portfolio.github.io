@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub, FaLock } from "react-icons/fa";
+import { FaCheck, FaExternalLinkAlt, FaGithub, FaLock } from "react-icons/fa";
 import { projectsData } from "@/lib/data";
 import { useLanguage } from "@/context/language-context";
 
@@ -11,6 +11,7 @@ type ProjectProps = (typeof projectsData)[number];
 
 export default function Project({
   id,
+  category,
   tags,
   githubUrl,
   demoUrl,
@@ -21,10 +22,16 @@ export default function Project({
   const { t } = useLanguage();
   const projectText = t.projects[id];
   const hasContribution = projectText.contribution.trim().length > 0;
+  const categoryLabel = {
+    frontend: t.projects.filterFrontend,
+    fullstack: t.projects.filterFullstack,
+    study: t.projects.filterStudy,
+    personal: t.projects.filterPersonal,
+  }[category];
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 24 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       className="group relative overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 dark:border-white/10 dark:bg-slate-950/80 dark:shadow-[0_20px_70px_rgba(2,6,23,0.4)]"
@@ -54,7 +61,7 @@ export default function Project({
           ) : (
             <Image
               src={preview.src}
-              alt={`Preview do projeto ${projectText.title}`}
+              alt={`${t.projects.previewLabel}: ${projectText.title}`}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
@@ -66,44 +73,11 @@ export default function Project({
         </a>
 
         <div className="rounded-[1.4rem] border border-slate-200/70 bg-slate-950 p-5 text-white dark:border-white/10">
-          <div className="flex items-center justify-between gap-3">
-            {/* <span className="rounded-full bg-white/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-cyan-200">
-              {t.projects.featuredLabel}
-            </span> */}
-            <div className="flex gap-2">
-              {githubUrl ? (
-                githubPrivate ? (
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300">
-                    <FaLock className="text-sm" />
-                  </span>
-                ) : (
-                  <a
-                    href={githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-100 transition hover:border-cyan-300/40 hover:text-cyan-200"
-                    aria-label={t.projects.github}
-                  >
-                    <FaGithub className="text-sm" />
-                  </a>
-                )
-              ) : null}
+          <span className="inline-flex rounded-full bg-cyan-300/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-cyan-200 ring-1 ring-cyan-300/15">
+            {categoryLabel}
+          </span>
 
-              {demoUrl ? (
-                <a
-                  href={demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-100 transition hover:border-cyan-300/40 hover:text-cyan-200"
-                  aria-label={t.projects.demo}
-                >
-                  <FaExternalLinkAlt className="text-xs" />
-                </a>
-              ) : null}
-            </div>
-          </div>
-
-          <h3 className="mt-6 text-2xl font-bold">{projectText.title}</h3>
+          <h3 className="mt-4 text-2xl font-bold">{projectText.title}</h3>
           <p className="mt-4 text-sm leading-7 text-slate-300">
             {projectText.description}
           </p>
@@ -138,9 +112,15 @@ export default function Project({
               {projectText.features.map((feature) => (
                 <li
                   key={feature}
-                  className="rounded-2xl border border-slate-200/70 bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
+                  className="flex gap-3 text-sm leading-6 text-slate-700 dark:text-slate-200"
                 >
-                  {feature}
+                  <span
+                    className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-400/10 text-[0.6rem] text-cyan-700 dark:text-cyan-200"
+                    aria-hidden="true"
+                  >
+                    <FaCheck />
+                  </span>
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>

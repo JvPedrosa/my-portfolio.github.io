@@ -1,6 +1,11 @@
 "use client";
 
-import React, { useEffect, useState, createContext, useContext } from "react";
+import React, {
+  useEffect,
+  useSyncExternalStore,
+  createContext,
+  useContext,
+} from "react";
 import { dictionaries, type Language } from "@/lib/i18n";
 
 type LanguageContextProviderProps = {
@@ -14,34 +19,46 @@ type LanguageContextType = {
 };
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
+const languageChangeEvent = "portfolio-language-change";
+
+const getClientLanguage = (): Language => {
+  const savedLanguage = window.localStorage.getItem("language");
+
+  if (savedLanguage === "pt" || savedLanguage === "en") {
+    return savedLanguage;
+  }
+
+  return navigator.language.toLowerCase().startsWith("en") ? "en" : "pt";
+};
+
+const subscribeToLanguage = (callback: () => void) => {
+  window.addEventListener("storage", callback);
+  window.addEventListener(languageChangeEvent, callback);
+
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener(languageChangeEvent, callback);
+  };
+};
 
 export default function LanguageContextProvider({
   children,
 }: LanguageContextProviderProps) {
-  const [language, setLanguage] = useState<Language>("pt");
-
-  const applyLanguage = (value: Language) => {
-    setLanguage(value);
-    window.localStorage.setItem("language", value);
-    document.documentElement.lang = value === "en" ? "en" : "pt-BR";
-  };
+  const language = useSyncExternalStore<Language>(
+    subscribeToLanguage,
+    getClientLanguage,
+    (): Language => "pt"
+  );
 
   const toggleLanguage = () => {
-    applyLanguage(language === "pt" ? "en" : "pt");
+    const nextLanguage = language === "pt" ? "en" : "pt";
+    window.localStorage.setItem("language", nextLanguage);
+    window.dispatchEvent(new Event(languageChangeEvent));
   };
 
   useEffect(() => {
-    const localLanguage = window.localStorage.getItem(
-      "language"
-    ) as Language | null;
-
-    if (localLanguage === "pt" || localLanguage === "en") {
-      applyLanguage(localLanguage);
-    } else if (navigator.language.toLowerCase().startsWith("en")) {
-      applyLanguage("en");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    document.documentElement.lang = language === "en" ? "en" : "pt-BR";
+  }, [language]);
 
   return (
     <LanguageContext.Provider

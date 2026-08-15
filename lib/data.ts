@@ -21,10 +21,16 @@ import {
   SiJavascript,
   SiMongodb,
   SiNextdotjs,
+  SiNuxtdotjs,
   SiPostgresql,
+  SiPrisma,
   SiReact,
   SiRedux,
+  SiSqlite,
+  SiSupabase,
+  SiTailwindcss,
   SiTypescript,
+  SiVercel,
   SiVuetify,
 } from "react-icons/si";
 
@@ -273,16 +279,22 @@ export const skillCategories: {
       { skill: "React", icon: React.createElement(SiReact) },
       { skill: "Redux", icon: React.createElement(SiRedux) },
       { skill: "Next.js", icon: React.createElement(SiNextdotjs) },
+      { skill: "Nuxt.js", icon: React.createElement(SiNuxtdotjs) },
       { skill: "TypeScript", icon: React.createElement(SiTypescript) },
       { skill: "JavaScript", icon: React.createElement(SiJavascript) },
       { skill: "HTML", icon: React.createElement(SiHtml5) },
       { skill: "CSS", icon: React.createElement(SiCss3) },
+      { skill: "Tailwind CSS", icon: React.createElement(SiTailwindcss) },
     ],
   },
   {
     id: "backend",
     icon: React.createElement(FaServer),
-    skills: [{ skill: "Node.js", icon: React.createElement(FaNodeJs) }],
+    skills: [
+      { skill: "Node.js", icon: React.createElement(FaNodeJs) },
+      { skill: "Prisma", icon: React.createElement(SiPrisma) },
+      { skill: "REST APIs", icon: React.createElement(FaServer) },
+    ],
   },
   {
     id: "database",
@@ -290,12 +302,17 @@ export const skillCategories: {
     skills: [
       { skill: "PostgreSQL", icon: React.createElement(SiPostgresql) },
       { skill: "MongoDB", icon: React.createElement(SiMongodb) },
+      { skill: "Supabase", icon: React.createElement(SiSupabase) },
+      { skill: "SQLite", icon: React.createElement(SiSqlite) },
     ],
   },
   {
     id: "tools",
     icon: React.createElement(FaTools),
-    skills: [{ skill: "Git", icon: React.createElement(SiGit) }],
+    skills: [
+      { skill: "Git", icon: React.createElement(SiGit) },
+      { skill: "Vercel", icon: React.createElement(SiVercel) },
+    ],
   },
   {
     id: "cloud",

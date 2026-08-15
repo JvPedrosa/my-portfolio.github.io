@@ -10,6 +10,7 @@ const pt = {
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     language: "Alternar idioma",
+    skipToContent: "Pular para o conteúdo",
   },
   sectionHeadings: {
     about: "Sobre mim",
@@ -18,6 +19,14 @@ const pt = {
     skills: "Stack e habilidades",
     experience: "Experiência profissional",
     contact: "Vamos conversar",
+  },
+  sectionEyebrows: {
+    about: "Perfil",
+    projects: "Trabalhos selecionados",
+    skills: "Competências",
+    experience: "Trajetória",
+    education: "Formação acadêmica",
+    contact: "Contato",
   },
   intro: {
     eyebrow: "Frontend em primeiro plano, visão full stack na execução",
@@ -41,12 +50,15 @@ const pt = {
     availabilityText:
       "React, Vue.js, Next.js, Node.js, TypeScript e colaboração próxima com produto.",
     imageAlt: "Foto de perfil de João Victor Pedrosa",
+    roleLabel: "Desenvolvedor Full Stack",
+    onlineLabel: "Disponível",
+    techHighlights: ["React / Vue", "Next.js / Node.js", "TypeScript", "Foco em UX"],
   },
   about: {
     intro:
       "Atuo no desenvolvimento de interfaces e aplicações web, com interesse real em experiência do usuário, arquitetura de front-end e evolução contínua de produtos digitais.",
     summary:
-      "Sou estudante de Ciência da Computação pela UFPB e trabalho como desenvolvedor full stack, com maior profundidade em frontend. Gosto de transformar requisitos em interfaces claras, acessíveis e bem estruturadas, sem perder de vista a integração com back-end e a qualidade do código.",
+      "Sou estudante de Ciência da Computação na UFPB e trabalho como desenvolvedor full stack, com maior profundidade em frontend. Gosto de transformar requisitos em interfaces claras, acessíveis e bem estruturadas, sem perder de vista a integração com back-end e a qualidade do código.",
     workingStyle:
       "Tenho experiência com React, Vue.js, TypeScript, Next.js e Node.js. No dia a dia, busco equilibrar usabilidade, performance e organização técnica para entregar soluções consistentes.",
     interests:
@@ -104,6 +116,7 @@ const pt = {
   },
   footer:
     "Portfólio desenvolvido para apresentar experiência em frontend, produto e desenvolvimento full stack.",
+  copyright: "Todos os direitos reservados.",
   notFound: {
     title: "Ops! Essa página fugiu.",
     subtitle:
@@ -111,10 +124,10 @@ const pt = {
     backHome: "Voltar para o início",
   },
   education: {
-    degree: "Bacharelado em Ciência da Computação",
+    degree: "Graduando em Ciência da Computação",
     institution: "Universidade Federal da Paraíba (UFPB)",
-    period: "2019 - 2024",
-    status: "Base acadêmica em computação, desenvolvimento web e resolução de problemas.",
+    period: "2019 - atual",
+    status: "Graduação em andamento, com foco em computação, desenvolvimento web e resolução de problemas.",
   },
   cv: {
     jobTitle: "Desenvolvedor Full-Stack",
@@ -230,6 +243,7 @@ const pt = {
     problemLabel: "Problema resolvido",
     contributionLabel: "Minha participação",
     featuresLabel: "Funcionalidades principais",
+    previewLabel: "Prévia da interface",
     filterAll: "Todos",
     filterFrontend: "Frontend",
     filterFullstack: "Full stack",

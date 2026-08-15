@@ -4,6 +4,8 @@ import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import LanguageContextProvider from "@/context/language-context";
 import { siteConfig } from "@/lib/data";
+import MotionProvider from "@/components/motion-provider";
+import SkipLink from "@/components/skip-link";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.websiteUrl),
@@ -67,9 +69,12 @@ export default function RootLayout({
         <div className="site-orb site-orb-one" aria-hidden="true" />
         <div className="site-orb site-orb-two" aria-hidden="true" />
         <LanguageContextProvider>
+          <SkipLink />
           <ActiveSectionContextProvider>
-            <Header />
-            {children}
+            <MotionProvider>
+              <Header />
+              {children}
+            </MotionProvider>
           </ActiveSectionContextProvider>
         </LanguageContextProvider>
       </body>

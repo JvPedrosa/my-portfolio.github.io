@@ -20,7 +20,7 @@ export default function Skills() {
       ref={ref}
       className="section-shell rounded-[2rem] px-6 py-10 scroll-mt-32 sm:px-10 sm:py-12"
     >
-      <SectionHeading eyebrow="Capabilities">
+      <SectionHeading eyebrow={t.sectionEyebrows.skills}>
         {t.sectionHeadings.skills}
       </SectionHeading>
 
@@ -32,7 +32,7 @@ export default function Skills() {
         {visibleCategories.map((category, index) => (
           <motion.article
             key={category.id}
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ delay: index * 0.04 }}

@@ -46,7 +46,7 @@ export default function Intro() {
 
       <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_0.9fr]">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           className="relative z-10"
         >
@@ -130,11 +130,11 @@ export default function Intro() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-slate-950 px-5 py-4 text-white shadow-2xl dark:bg-white dark:text-slate-950 sm:max-w-xs">
+            <div className="rounded-3xl border border-cyan-400/20 bg-cyan-400/10 px-5 py-4 text-slate-900 dark:text-white sm:max-w-xs">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300 dark:text-cyan-700">
                 {t.intro.availabilityTitle}
               </p>
-              <p className="mt-3 text-sm leading-7 text-slate-300 dark:text-slate-700">
+              <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
                 {t.intro.availabilityText}
               </p>
             </div>
@@ -142,7 +142,7 @@ export default function Intro() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={false}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
           className="relative mx-auto w-full max-w-sm"
@@ -150,9 +150,9 @@ export default function Intro() {
           <div className="absolute -inset-5 rounded-[2rem] bg-[conic-gradient(from_120deg,_rgba(34,211,238,0.15),_rgba(59,130,246,0.15),_transparent_60%)] blur-2xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/95 p-5 shadow-[0_20px_80px_rgba(2,6,23,0.45)]">
             <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-xs font-medium uppercase tracking-[0.22em] text-slate-300">
-              <span>{siteConfig.role}</span>
+              <span>{t.intro.roleLabel}</span>
               <span className="rounded-full bg-emerald-400/15 px-2 py-1 text-emerald-300">
-                Online
+                {t.intro.onlineLabel}
               </span>
             </div>
 
@@ -166,12 +166,7 @@ export default function Intro() {
             </div>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {[
-                "React / Vue",
-                "Next.js / Node.js",
-                "TypeScript",
-                "UX minded",
-              ].map((item) => (
+              {t.intro.techHighlights.map((item) => (
                 <div
                   key={item}
                   className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300"

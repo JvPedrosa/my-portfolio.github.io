@@ -18,7 +18,7 @@ export default function Experience() {
       ref={ref}
       className="section-shell rounded-[2rem] px-6 py-10 scroll-mt-32 sm:px-10 sm:py-12"
     >
-      <SectionHeading eyebrow="Career path">
+      <SectionHeading eyebrow={t.sectionEyebrows.experience}>
         {t.sectionHeadings.experience}
       </SectionHeading>
 
@@ -36,7 +36,7 @@ export default function Experience() {
           return (
             <motion.article
               key={experience.id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.03 }}

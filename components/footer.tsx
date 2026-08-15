@@ -13,8 +13,7 @@ export default function Footer() {
         <p className="font-semibold text-white">{siteConfig.name}</p>
         <p className="leading-7">{t.footer}</p>
         <small className="text-slate-400">
-          © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos
-          reservados.
+          © {new Date().getFullYear()} {siteConfig.name}. {t.copyright}
         </small>
       </div>
     </footer>

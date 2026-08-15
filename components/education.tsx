@@ -15,12 +15,12 @@ export default function Education() {
     <motion.section
       id="education"
       ref={ref}
-      initial={{ opacity: 0, y: 24 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       className="section-shell rounded-[2rem] px-6 py-10 scroll-mt-32 sm:px-10 sm:py-12"
     >
-      <SectionHeading eyebrow="Academic background">
+      <SectionHeading eyebrow={t.sectionEyebrows.education}>
         {t.sectionHeadings.education}
       </SectionHeading>
 

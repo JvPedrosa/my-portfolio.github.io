@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { FaCodeBranch } from "react-icons/fa";
-import { projectsData } from "@/lib/data";
+import {
+  projectCategories,
+  projectsData,
+  type ProjectCategoryId,
+} from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useLanguage } from "@/context/language-context";
 import SectionHeading from "./section-heading";
@@ -11,23 +14,20 @@ import Project from "./project";
 export default function Projects() {
   const { ref } = useSectionInView("projects");
   const { t } = useLanguage();
-  const [activeTechnology, setActiveTechnology] = useState("all");
-
-  const technologies = useMemo(
-    () =>
-      Array.from(new Set(projectsData.flatMap((project) => project.tags))).sort(
-        (firstTechnology, secondTechnology) =>
-          firstTechnology.localeCompare(secondTechnology)
-      ),
-    []
-  );
+  const [activeCategory, setActiveCategory] = useState<ProjectCategoryId>("all");
 
   const filteredProjects = useMemo(() => {
-    if (activeTechnology === "all") return projectsData;
-    return projectsData.filter((project) =>
-      project.tags.includes(activeTechnology)
-    );
-  }, [activeTechnology]);
+    if (activeCategory === "all") return projectsData;
+    return projectsData.filter((project) => project.category === activeCategory);
+  }, [activeCategory]);
+
+  const categoryLabels: Record<ProjectCategoryId, string> = {
+    all: t.projects.filterAll,
+    frontend: t.projects.filterFrontend,
+    fullstack: t.projects.filterFullstack,
+    study: t.projects.filterStudy,
+    personal: t.projects.filterPersonal,
+  };
 
   return (
     <section
@@ -35,7 +35,7 @@ export default function Projects() {
       ref={ref}
       className="section-shell rounded-[2rem] px-6 py-10 scroll-mt-32 sm:px-10 sm:py-12"
     >
-      <SectionHeading eyebrow="Selected work">
+      <SectionHeading eyebrow={t.sectionEyebrows.projects}>
         {t.sectionHeadings.projects}
       </SectionHeading>
 
@@ -44,34 +44,25 @@ export default function Projects() {
           {t.projects.intro}
         </p>
 
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => setActiveTechnology("all")}
-            className={`focus-ring inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
-              activeTechnology === "all"
-                ? "border-cyan-300 bg-cyan-300 text-slate-950"
-                : "border-slate-200 bg-white/80 text-slate-700 hover:border-cyan-300 dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
-            }`}
-          >
-            <span className="text-sm">
-              <FaCodeBranch />
-            </span>
-            {t.projects.filterAll}
-          </button>
-
-          {technologies.map((technology) => (
+        <div
+          className="-mx-6 flex gap-2 overflow-x-auto px-6 pb-2 sm:mx-0 sm:flex-wrap sm:px-0"
+          role="group"
+          aria-label={t.sectionHeadings.projects}
+        >
+          {projectCategories.map((category) => (
             <button
-              key={technology}
+              key={category.id}
               type="button"
-              onClick={() => setActiveTechnology(technology)}
-              className={`focus-ring inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
-                activeTechnology === technology
+              onClick={() => setActiveCategory(category.id)}
+              aria-pressed={activeCategory === category.id}
+              className={`focus-ring inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                activeCategory === category.id
                   ? "border-cyan-300 bg-cyan-300 text-slate-950"
                   : "border-slate-200 bg-white/80 text-slate-700 hover:border-cyan-300 dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
               }`}
             >
-              {technology}
+              <span aria-hidden="true">{category.icon}</span>
+              {categoryLabels[category.id]}
             </button>
           ))}
         </div>

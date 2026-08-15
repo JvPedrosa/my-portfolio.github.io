@@ -31,7 +31,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
-      <main className="px-4 pb-12 pt-28 sm:px-6 sm:pt-36">
+      <main id="main-content" className="px-4 pb-12 pt-28 sm:px-6 sm:pt-36">
         <div className="mx-auto flex max-w-6xl flex-col gap-8">
           <Intro />
           <About />

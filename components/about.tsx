@@ -16,12 +16,14 @@ export default function About() {
     <motion.section
       id="about"
       ref={ref}
-      initial={{ opacity: 0, y: 24 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.35 }}
       className="section-shell rounded-[2rem] px-6 py-10 scroll-mt-32 sm:px-10 sm:py-12"
     >
-      <SectionHeading eyebrow="Profile">{t.sectionHeadings.about}</SectionHeading>
+      <SectionHeading eyebrow={t.sectionEyebrows.about}>
+        {t.sectionHeadings.about}
+      </SectionHeading>
 
       <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-5 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">

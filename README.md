@@ -1,11 +1,11 @@
 # João Victor Pedrosa | Portfolio
 
-Portfólio pessoal desenvolvido com `Next.js 14`, `TypeScript`, `Tailwind CSS` e `framer-motion`.
+Portfólio pessoal desenvolvido com `Next.js 16`, `React 19`, `TypeScript`, `Tailwind CSS` e `framer-motion`.
 
 ## Tecnologias
 
-- `Next.js 14`
-- `React 18`
+- `Next.js 16`
+- `React 19`
 - `TypeScript`
 - `Tailwind CSS`
 - `framer-motion`

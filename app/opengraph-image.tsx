@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/data";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 export const alt = "Portfólio de João Victor Pedrosa";
 export const size = {
   width: 1200,
